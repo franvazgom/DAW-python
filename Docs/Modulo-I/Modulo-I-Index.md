@@ -5,7 +5,7 @@
 # Tabla de contenido
 1. [Introducción](#introduction)
 2. [Objetivos](#objectives)
-3. [Requerimientos de software](../References.md)
+3. [Requerimientos de software](Requirements.md)
 4. [Un vistazo al IDE y la consola](#terminal)
 5. [Operadores aritméticos](#arithmetic_operators)
 6. [Hola mundo en python](#hello_world)
@@ -24,7 +24,7 @@
 19. [Ciclos](Modulo-I-Ciclos.md)
 20. [Tortuga](Modulo-I-Turtle.md)
 ## Introducción <a name="introduction"></a> 
-Este es un módulo **básico de programación** donde puedes aprender a programar en el lenguaje python de manera estructurada. Si ya sabes programar en cualquier otro lenguaje, seguramente puedes avanzar mucho más rápido. Finalmente, si ya conoces el lenguaje python y solo estas reforzando tus habilidades de programación puedes intentar realizar los ejercicios propuestos en la carpeta `code/moduloI` 
+Este es un módulo **básico de programación** donde puedes aprender a programar en el lenguaje python de manera estructurada. Si ya sabes programar en cualquier otro lenguaje, seguramente puedes avanzar mucho más rápido. Finalmente, si ya conoces el lenguaje python y solo estas reforzando tus habilidades de programación puedes intentar realizar los ejercicios propuestos en la carpeta `code/Modulo-I` 
 
 ## Objetivos <a name="objectives"></a>
 El contenido de este curso pretende:  
@@ -34,7 +34,7 @@ El contenido de este curso pretende:
 * Contar con las bases necesarias para seguir avanzando en el mundo de la programación
 
 ## Requerimientos de software
-Visita la página de [requerimientos](docs/Requirements.md) para que instales todo lo que necesitas
+Visita la página de [requerimientos](Requirements.md) para que instales todo lo que necesitas
 
 ## Un vistazo al IDE y la consola <a name="terminal"></a>
 ### Abrir una terminal
@@ -77,7 +77,7 @@ exit()
 1. `(5 - 1) * ((7 + 9) / (3 - 1)) = ?`
 2. `5 - 1 * 7 + 9 / 3 - 1 = ?`
 3. `5 + 10 // 4 * 8 % 3 * 2 ** 3 = ?`
-*Verifica tus resultados en la consola de python
+<br>*Verifica tus resultados en la consola de python
 
 ## Hola mundo en python <a name="hello_world"></a>
 1. Crea una carpeta de trabajo

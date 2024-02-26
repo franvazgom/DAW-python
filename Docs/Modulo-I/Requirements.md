@@ -1,4 +1,4 @@
-[Página principal](../README.md)
+[Página principal](Modulo-I-Index.md)
 
 # Requerimientos mínimos
 
@@ -6,7 +6,7 @@
 Si la computadora donde trabajas no tienes permisos de administrador, puedes utilizar `replit` <br>
 * [Editor en línea - Replit](https://replit.com/)
 
-### Instala el software que viene en las [referencias](../References.md)
+### Instala el software que viene en las [referencias](References.md)
 * Instalación de python
     * *Se recomienda agregar al PATH la ruta donde queda instalado python*
 * Instalación de Visual Studio Code
