@@ -203,22 +203,43 @@ import math
 math.floor(3.9)
 math.ceil(9.1)
 math.comb(3 , 2)
+math.perm(3 , 2)
 math.factorial(4)
 math.gcd(8 , 64)
 math.log(8 , 2)
 ```
 
+```python
+import math
+# Las funciones trigonométricas se usan utilizando radianes
+math.pi
+# Verifica el coseno y seno para un ángulo de 90° 
+math.cos(3.1416 / 2)
+math.cos(math.pi / 2)
+round(math.cos(math.pi / 2),2)
+math.sin(math.pi/4)
+
+```
 
 ## funcion main (buena práctica) <a name="main_function"></a>
 
 ```python
-# Una buena práctica, el uso de la variable __name__ 
+'''
+    Las variables "predefinidas" en Python son conocidas como variables de entorno. 
+    Son variables que están definidas por el propio lenguaje y tienen un propósito 
+    específico en el contexto en el que se utilizan
+''' 
 def main():
     print("Hola mundo")
 
-# La variable __name__ toma su valor dependiendo de como se ejecute el script,
-# cuando el valor de la variable es: __main__ python indica que el script 
-# principal es 'este script' 
+'''
+    La variable __name__ se utiliza para determinar si un script de Python se está 
+    ejecutando como un programa principal o si está siendo importado como un módulo 
+    en otro script. Cuando un script se ejecuta directamente, el valor de __name__ 
+    es '__main__', pero cuando se importa como un módulo en otro script, 
+    su valor es el nombre del módulo.
+'''
+
 if __name__ == '__main__':
     main()
 ```
@@ -229,7 +250,7 @@ Esto significa que tal vez no sea posible para una instalación de Python cumpli
 
 La solución a este problema es crear un entorno virtual, un directorio que contiene una instalación de Python de una versión en particular, además de unos cuantos paquetes adicionales.
 
-Diferentes aplicaciones pueden entonces usar entornos virtuales diferentes. Para resolver el ejemplo de requerimientos en conflicto citado anteriormente, la aplicación A puede tener su propio entorno virtual con la versión 1.0 instalada mientras que la aplicación B tiene otro entorno virtual con la versión 2.0. Si la aplicación B requiere que actualizar la librería a la versión 3.0, ésto no afectará el entorno virtual de la aplicación A.
+Diferentes aplicaciones pueden entonces usar entornos virtuales diferentes. Para resolver el ejemplo de requerimientos en conflicto citado anteriormente, la aplicación A puede tener su propio entorno virtual con la versión 1.0 instalada mientras que la aplicación B tiene otro entorno virtual con la versión 2.0. Si la aplicación B requiere que actualizar la librería a la versión 3.0, essto no afectará el entorno virtual de la aplicación A.
 
 ```python
 # Sintaxis

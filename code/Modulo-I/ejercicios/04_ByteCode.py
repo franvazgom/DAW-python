@@ -1,6 +1,7 @@
 import dis
 
 def main():
+    # Comentario de una línea
     print ("Esto es una suma")
     x = 4
     y = 23
