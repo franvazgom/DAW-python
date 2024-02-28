@@ -8,13 +8,12 @@ print(str1)
 print(f'2.- El valor de PI = {math.pi:.4f}')
 
 # entero después de : completa el número de caracteres la amplitud del string
-
 nombre1 = 'Francisco'
 apellido1 = 'Vazquez'
 edad1 = 47
 
 nombre2 = 'Laura'
-apellido2 = 'Fer'
+apellido2 = 'Ferández'
 edad2 = 7
 
 print()
