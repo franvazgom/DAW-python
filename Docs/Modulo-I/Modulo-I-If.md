@@ -65,6 +65,16 @@ Las líneas de código de python pueden ser agrupadas en bloques, las reglas de 
 ## Ejemplo elif 
 <img src="../../images/IfElIfEjemplo1.png" width="600">
 
+```python
+    name = input("name: ")
+    age = int(input("age: "))
+    if name == 'Alice':
+        print("Hi Alice.")
+    elif age < 12:
+        print("You are not Alice, kiddo.")
+    else:
+        print("You are neither Alice nor a little kid")
+```
 
 ## Ejemplo elif complejo
 <img src="../../images/IfElIfEjemplo2.png" width="600">
