@@ -64,7 +64,24 @@ En python, la ausencia de valor se representa con la palabra `None`
 ```python
 valor = print('Hola')
 print(valor == None)
+```
+## valores por default
 
+```python
+def suma_enteros(n1 = None, n2 = 0):    
+    if n1 == None or n2 == None:
+        # Observa que si se ejecuta este return, la función termina
+        return 0
+    return n1 + n2
+
+print(suma_enteros())
+print(suma_enteros(8)) 
+print(suma_enteros(10, 20)) 
+
+#Llamada indicando de manera explicita los valores
+print(suma_enteros(n2=10, n1=20))
+print(suma_enteros(n1=20))
+print(suma_enteros(10, n2=None))
 ```
 
 ## Variables locales y globales
@@ -99,18 +116,6 @@ eggs = 42
 spam()
 print(eggs)
 ```
-
-
-### Variable global y local con mismo nombre 
-
-```python
-def spam():
-    print(eggs)
-eggs = 42
-spam()
-print(eggs)
-```
-
 ### Variable global y local con mismo nombre 
 
 ```python
