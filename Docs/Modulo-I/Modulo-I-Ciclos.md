@@ -7,6 +7,7 @@
 ## While
 ### `while expression is true`  
 <img src="../../images/while_count.png" width="600">
+
 ```python
 spam = 0
 while spam < 5:

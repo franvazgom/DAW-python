@@ -52,9 +52,11 @@
 ['cat', 'bat', 'rat', 'elephant']
 ```
 ## Función len 
+```python
 >>> spam = ['cat', 'dog', 'moose']
 >>> len(spam)
 3
+```
 
 ## Actualización de datos
 ```python
@@ -156,11 +158,14 @@ True
 ```
 
 ## Index
+
+```python
 >>> spam = ['hello', 'hi', 'howdy', 'heyas']
 >>> spam.index('hello')
 0
 >>> spam.index('heyas')
 3
+```
 
 ## Append & Insert
 ```python
