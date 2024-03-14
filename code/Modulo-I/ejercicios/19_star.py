@@ -17,6 +17,7 @@ def draw_star(t):
     tam = round(QUADRANT /lines,1)
     x = tam
     y = QUADRANT
+    stik = ['\\', '|', '/', '─'] 
     for i in range(lines):
         perce = round((i + 1)/ lines * 100, 2)         
         draw_line(t, (x, 0), (0, y))
@@ -25,8 +26,8 @@ def draw_star(t):
         draw_line(t, (0, -y), (x, 0))
         x += tam 
         y -= tam 
-        print(f'\rAvance: {perce}%    ', end='')
-    print()
+        print(f'\r {stik[i%len(stik)]} {perce:6}%', end='')
+    print('\r'+' '*10)
 
 def init():
     width = 600
