@@ -14,7 +14,8 @@ def main():
     t.pendown()
     ang = 0
 
-    t.left(30)
+
+    t.left(90)
     pinta_triangulo(t, 200, 150)
     t.left(90)
     pinta_triangulo(t, 200, 150)
