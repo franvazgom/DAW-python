@@ -12,12 +12,19 @@ def regresa_nombre_aleatorio():
 
 def main():
     personas = []
-    for _ in range(10):
+    for _ in range(500):
         personas.append(regresa_nombre_aleatorio())
     
-    for persona in personas:
-        print(persona)
+    #for persona in personas:
+    #    print(persona)
     
+    nombre = 'Francisco Vázquez Gómez' 
+    if nombre not in personas:
+        print(f"La persona> {nombre} no está")
+    else:
+        print(f"La persona {nombre} si se encuentra en la lista")
+        print(f'Se encuentra en la posición: {personas.index(nombre)}')
+        
 
 if __name__ == '__main__':
     main()
