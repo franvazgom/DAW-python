@@ -1,0 +1,4 @@
+Esto es un archivo de pruebas
+Esta es la linea numero 2
+en la linea 3 no empezó con mayúscula
+fin del archivo,.,,
