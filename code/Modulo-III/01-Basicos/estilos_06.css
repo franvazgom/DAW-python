@@ -1,0 +1,22 @@
+
+li em {
+    color: orchid;
+}
+
+h1 + p {
+    font-size: 200%;
+}
+
+a:link {
+    color:pink;
+}
+
+a:visited {
+    color:green;
+}
+
+a:hover {
+    text-decoration: none;
+    font-size: 200%;
+}
+
