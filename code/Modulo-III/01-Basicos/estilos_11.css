@@ -1,0 +1,12 @@
+body {
+    background-color: pink;
+}
+
+/* Aplica solo caudno la ventana es mayor a 30 em de ancho */
+@media (min-width: 30em) {
+    body {
+        background-color: blue;
+    }
+}
+
+

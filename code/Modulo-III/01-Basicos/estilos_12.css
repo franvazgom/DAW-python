@@ -1,0 +1,24 @@
+a[title] {
+    font-size: xx-large;
+    font-style: italic;
+}
+
+a[href='https://www.google.com'] {
+    font-weight: bold;
+}
+
+a:hover {
+    color:green; 
+}
+
+p::first-line {
+    color:red;
+}
+
+article > p{
+    color: blueviolet;
+}
+
+article p{
+    color: blue;
+}

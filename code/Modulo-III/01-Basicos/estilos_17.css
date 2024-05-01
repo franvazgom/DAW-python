@@ -1,0 +1,29 @@
+
+li[class ^= 'a'] {
+    background-color: beige;
+}
+
+/*  Con la i antes del cierre ] no hace distinción 
+    entre mayúsculas y minúsculas
+*/
+li[class ^= 'a' i] {
+    color: brown;
+}
+
+article p:first-of-type::first-letter {
+    font-size: 150%;
+    font-weight: bold;
+    color: red;
+}
+
+h2 + p {
+    color:blue; 
+}
+
+h2 ~ p {
+    font-weight: bold;
+    font-size: x-large;    
+    background-color: beige; 
+}
+
+

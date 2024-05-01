@@ -1,0 +1,13 @@
+
+.box {
+    border: 4px solid #666;
+    padding: 0.5em;
+}
+
+.box.warning {
+    border-color: orange;
+}
+
+.box.danger {
+    border-color: red;
+}

@@ -1,0 +1,15 @@
+/*
+1.- Cualquier parrafo que siga inmediatamente después de un h2 rojo
+2.- Eliminar bullets y agregar un bottom borde gris de 1px solo a los elementos de 
+    la lista con clase list
+*/
+
+h2 + p {
+    color:red; 
+}
+
+.list > li {
+    border-bottom: 1px solid gray;
+    list-style: none;
+}
+

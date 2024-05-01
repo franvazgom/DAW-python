@@ -1,0 +1,17 @@
+
+a {
+    border: solid 3px;     
+}
+a[title] {
+    border-color: pink;    
+}
+
+/* contains */
+a[href*="contact"] {
+    border-color:purple; 
+}
+
+/* start */
+a[href^="https:"] {
+    border-color:green;
+}

@@ -1,0 +1,22 @@
+/*
+1.- Elemento con id "special" fondo amarillo
+2.- clase "alert" con 1px gris de borde
+3.- Si el elemento con clase "alert" también tiene la clase "stop", hacer el fondo rojo
+4.- Si el elemento con clase "alert" también tiene la clase "go", hacer el fondo verde
+*/
+
+#special {
+    background-color: yellow;
+}
+
+.alert {
+    border: 1px solid gray;
+}
+
+.alert.stop {
+    background-color: red;
+}
+
+.alert.go {
+    background-color: green; 
+}

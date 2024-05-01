@@ -1,0 +1,16 @@
+
+/* Considera los hijos "em" de todos los "p" */
+p > em{
+    color: pink;
+}
+
+/* Considera los descendientes "em" de todos los "p" */
+p em{
+    font-weight: bold;
+    font-size: x-large;
+}
+
+/* Todos los h3 que son hermanos y que van después de un h2*/
+h2 ~ h3 {
+    color: blueviolet;
+}

@@ -4,3 +4,7 @@ Instrucciones de la práctica
     2.- Ejecuta el programa desde la terminal con el comando
         python 01_HolaMundo.py 
 '''
+
+cad = "amor"
+otra = "roma"
+print(sorted(cad) == sorted(otra))
