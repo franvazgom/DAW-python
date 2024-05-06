@@ -1,0 +1,14 @@
+p {
+  border: 2px solid green;
+  width: 60%;
+  /* | arriba | derecha | abajo | izquierda | */
+  margin: 20px 0 40px 0; 
+}
+
+span {
+  border: 3px solid blue;   
+  margin: 0 5px 0 20px; 
+}
+
+
+

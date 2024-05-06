@@ -1,0 +1,30 @@
+.box {
+    background-color: #567895;
+}
+
+h2 {
+    background-color: black;
+    color: white; 
+}
+
+span {
+    background-color: rgb(255 255 255 / 50%);
+}
+
+.fondo {
+    height: 300px;
+    width: 300px;     
+}
+
+.a {
+    background-image: url(../../../images/estrella.png);    
+    background-repeat: no-repeat;
+}
+
+
+.b {
+    background-image: url(../../../images/LogoMagicPython.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
