@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Example</title>
+    <style>
+        tr, td, th {
+            border: 1px solid black;
+            margin: 1em;
+            padding: 1em;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Nombre</td>
+            <td colspan="2">Teléfonos</td>
+        </tr>
+        <tr>
+            <td>Juan Pérez</td>
+            <td>55445577</td>
+            <td>99548621</td>
+        </tr>
+        <tr>
+            <td>María González</td>
+            <td>41475852</td>
+            <td></td>
+        </tr>
+    </table>
+    <hr>
+    <table>
+        <tr>
+            <td colspan="7">Abril</td>
+        </tr>
+        <tr>
+            <td rowspan="2" colspan="6"> Vacaciones</td>
+            <td></td>            
+        </tr>        
+        <tr>
+            <td></td>            
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <hr>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Materia</th>
+                <th>Calificación</th>
+            </tr>
+        </thead>        
+        <tr>
+            <td rowspan="3">Juan Pérez</td>
+            <td>Inglés</td>
+            <td>45</td>
+        </tr>
+        <tr>
+            <td>Matemáticas</td>
+            <td>97</td>
+        </tr>
+        <tr>
+            <td>Español</td>
+            <td>88</td>
+        </tr>        
+    </table>
+    <hr>
+    <table>
+        <tr>
+            <th rowspan="2">Nombre</th>
+            <th rowspan="2">ID</th>
+            <th colspan="2">Fechas</th>
+            <th rowspan="2">Balance</th>
+        </tr>
+        <tr>
+            <th>Compra</th>
+            <th>Cancelación</th>
+        </tr>
+        <tr>
+            <td>Juan Pérez</td>
+            <td>77885544</td>
+            <td>13 enero 2022</td>
+            <td>30 marzo 2024</td>
+            <td>$1,765.87</td>
+        </tr>
+        <tr>
+            <td>Margarita Sánchez</td>
+            <td>65326554</td>
+            <td>17 diciembre 2019</td>
+            <td>N/A</td>
+            <td>$0.0</td>
+        </tr>
+        <tr>
+            <td colspan="5">...</td>            
+        </tr>
+        <tr>
+            <th colspan="4">Total</th>
+            <td>$98,654.52</td>
+        </tr>
+    </table>
+      
+</body>
+</html>
