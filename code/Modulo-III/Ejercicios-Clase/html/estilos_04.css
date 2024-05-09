@@ -1,0 +1,17 @@
+
+.especial {
+    font-size:xx-large
+}
+
+body h1 + p .especial {
+    color: yellow;
+    background-color: black;
+}
+
+articulo p span {
+    color: aqua;
+}
+
+h1 + ul + p {
+    color: blueviolet;
+}
