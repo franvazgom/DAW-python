@@ -1,0 +1,29 @@
+
+li em {
+    color: orchid;
+}
+
+h1 + p {
+    color: blue;
+    font-size: 200%;
+}
+
+h1 + p em {
+    font-weight: bold;
+    font-size: 300%;
+    color: red;
+}
+
+a:link {
+    color: pink;
+    font-size: 200%;
+}
+
+a:visited {
+    color: green;
+}
+
+a:hover {
+    text-decoration: none;
+    font-size: 300%;
+}
