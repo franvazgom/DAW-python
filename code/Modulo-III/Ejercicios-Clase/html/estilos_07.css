@@ -1,0 +1,17 @@
+
+a {
+    border: 3px solid black;
+}
+
+a[title] {
+    border-color: brown;
+}
+
+a[href*="yahoo"] {
+    border-color: aqua;
+}
+
+a[href^="xxx"] {
+    border-color: green;
+    border-style: dotted;
+}

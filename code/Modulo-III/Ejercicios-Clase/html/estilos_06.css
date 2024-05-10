@@ -1,0 +1,25 @@
+body {
+    background-color: pink;
+}
+
+.box {
+    border: 3px solid blue;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 100px;
+}
+
+/* Aplica solo cuando la ventana es mas grande a 500px de ancho */
+@media (min-width: 500px) {
+    body {
+        background-color: blue;
+    }
+}
+
+
+
+@media (min-width: 1024px) {
+    body {
+        background-color: red;
+    }
+}
