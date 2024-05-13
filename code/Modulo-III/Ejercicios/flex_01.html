@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex ejemplos</title>
+    <link rel="stylesheet" href="flex_estilos_01.css">
+</head>
+<body>
+    <h1>Flexbox</h1>    
+    <h2>Eje principal y eje cruzado</h2>
+    <p>
+        El eje principal está definido por la propiedad <em>flex-direction</em> que posee 4 posibles valores: 
+    </p>
+    <ul>
+        <li>row</li>
+        <li>row-reverse</li>
+        <li>column</li>
+        <li>column-reverse</li>
+    </ul>
+    <p>El eje cruzado va perpendicular al eje principal</p>
+    <h1>Contenedor flex</h1>
+    <p>Para crear un contenedor flex, establecemos la propiedad del área del contenedor display como <em>flex o inline-flex.</em></p>
+    <p>Los hijos directos de este contenedor se vuelven <em>items flex</em> con todas las propiedades del CSS</p>
+    <ul>
+        <li>Los <em>items</em> se despliegan sobre una fila <em>flex-direction</em> por defecto es <em>row</em></li>
+        <li>Los <em>items</em> empiezan desde el margen inicial sobre el eje principal</li>
+        <li>Los <em>items</em> no se ajustan en la dimensión principal, pero se puede contraer</li>
+        <li>Los <em>items</em> se ajustarán para llenar el tamaño del eje cruzado</li>
+        <li>La propiedad <em>flex-basis</em> es definina como <em>auto</em></li>
+        <li>La propiedad <em>flex-wrap</em> es definina como <em>nowrap</em></li>
+    </ul>
+    <p>Todos los <em>ítems</em> se alinerarán en una sola fila, </p>
+    <ul>
+        <li>Usando el tamaño del contendor como su tamaño en el eje principal.</li>
+        <li>Si hay más ítems de los que caben en el contenedor, estos no se pasarán más abajo si no que sobrepasarán el margen</li>
+        <li>Si hay más ítems más altos que otros, todos los ítems serán ajustados en el eje cruzado para alcanzar al mayor</li>
+    </ul>
+    <div class="box">
+        <div>Uno  texto extra</div>
+        <div>Dos  texto extra</div>
+        <div>Tres texto extra <br>
+            Tiene <br>
+            Texto <br>
+            extra
+        </div>
+    </div>   
+    <br>
+    <div class="box2">
+        <div style="flex-grow: 2;">Uno  texto</div>
+        <div style="flex-grow: 1;">Dos  texto</div>
+        <div style="flex-grow: 1;">Tres texto <br>
+            Tiene <br>
+            Texto <br>
+            extra
+        </div>
+    </div>   
+    <div class="box2">
+        <div style="flex-shrink: 1;">Uno  texto</div>
+        <div style="flex-grow: 1;">Dos  texto</div>
+        <div style="flex-shrink: 1;">Tres texto <br>
+            Tiene <br>
+            Texto <br>
+            extra
+        </div>
+    </div>   
+    <div class="box2">
+        <div style="flex: 1 1 auto;">Uno  texto</div>
+        <div style="flex: 1 1 auto;">Dos  texto</div>
+        <div style="flex: 1 1 auto;">Tres texto <br>
+            Tiene <br>
+            Texto <br>
+            extra
+        </div>
+    </div>   
+    <div class="box2">
+        <div style="flex: initial">Uno  texto</div>
+        <div style="flex: auto">Dos  texto</div>
+        <div style="flex: initial">Tres texto <br>
+            Tiene <br>
+            Texto <br>
+            extra
+        </div>
+    </div>   
+    <div class="box3">
+        <div style="flex: auto">Uno <br> texto</div>
+        <div style="flex: auto">Dos  texto</div>
+        <div style="flex: auto">Tres texto <br>
+            Tiene <br>
+            Texto <br>
+            extra
+        </div>
+    </div>   
+    <div class="box4">
+        <div>Uno <br> texto</div>
+        <div>Dos  texto</div>
+        <div>Tres texto <br>
+            Tiene <br>
+            Texto <br>
+            extra
+        </div>
+    </div>   
+</body>
+</html>
