@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card 1</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .card {
+            box-shadow: 0 4px 10px 0 rgba(0,0,0,0.5);
+            transition: 5s;
+
+            /* width: 40%; */
+
+            border-radius: 10px;
+            /*max-width: 300px;*/
+            margin-right: 1%;
+            margin-bottom: 15px;
+        }
+        .card:hover {
+            box-shadow: 0 2px 20px 0 rgba(247,30,30,0.7);
+        }
+        .bodyCard {
+            padding: 3px 16px;
+            background-color: coral;
+            color: aliceblue;
+        }
+        .main {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        @media(min-width:800px) {
+            .card {
+                flex: 19%;
+                max-width: 19%;
+            }
+        }
+        @media(max-width:800px) {
+            .card {
+                flex: 32%;
+                max-width: 33%;
+            }
+        }
+        @media(max-width:600px) {
+            .card {
+                flex: 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>Tarjetas</h2>
+    <div class="main">
+        <div class="card">
+            <img src="https://source.unsplash.com/random/200x200" style="width: 100%;" >
+            <div class="bodyCard">
+                <h3><b>Tarjeta 1</b></h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde ad maxime, harum debitis officia suscipit perferendis culpa eaque exercitationem error voluptates doloribus quidem ratione similique delectus. Adipisci reiciendis iste magnam.
+                </p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://source.unsplash.com/random/201x200" style="width: 100%;" >
+            <div class="bodyCard">
+                <h3><b>Tarjeta 2</b></h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde ad maxime, harum debitis officia suscipit perferendis culpa eaque exercitationem error voluptates doloribus quidem ratione similique delectus. Adipisci reiciendis iste magnam.
+                </p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://source.unsplash.com/random/200x201" style="width: 100%;" >
+            <div class="bodyCard">
+                <h3><b>Tarjeta 3</b></h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde ad maxime, harum debitis officia suscipit perferendis culpa eaque exercitationem error voluptates doloribus quidem ratione similique delectus. Adipisci reiciendis iste magnam.
+                </p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://source.unsplash.com/random/201x201" style="width: 100%;" >
+            <div class="bodyCard">
+                <h3><b>Tarjeta 4</b></h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde ad maxime, harum debitis officia suscipit perferendis culpa eaque exercitationem error voluptates doloribus quidem ratione similique delectus. Adipisci reiciendis iste magnam.
+                </p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://source.unsplash.com/random/199x200" style="width: 100%;" >
+            <div class="bodyCard">
+                <h3><b>Tarjeta 5</b></h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde ad maxime, harum debitis officia suscipit perferendis culpa eaque exercitationem error voluptates doloribus quidem ratione similique delectus. Adipisci reiciendis iste magnam.
+                </p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://source.unsplash.com/random/199x201" style="width: 100%;" >
+            <div class="bodyCard">
+                <h3><b>Tarjeta 6</b></h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde ad maxime, harum debitis officia suscipit perferendis culpa eaque exercitationem error voluptates doloribus quidem ratione similique delectus. Adipisci reiciendis iste magnam.
+                </p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://source.unsplash.com/random/198x200" style="width: 100%;" >
+            <div class="bodyCard">
+                <h3><b>Tarjeta 7</b></h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde ad maxime, harum debitis officia suscipit perferendis culpa eaque exercitationem error voluptates doloribus quidem ratione similique delectus. Adipisci reiciendis iste magnam.
+                </p>
+            </div>
+        </div>        
+    </div>
+</body>
+</html>
