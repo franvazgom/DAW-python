@@ -1,0 +1,43 @@
+p > em:first-child {
+    color:blue;
+}
+
+em:first-child {
+    font-size: xx-large;
+}
+
+.box {
+    border: 4px solid #666;
+    padding: 0.5em;
+    margin: 5px;
+}
+
+.box.warning {
+    border-color: orange;
+}
+
+.box.danger {
+    border-color: red;
+}
+
+li[class ^='a'] {
+    background-color: beige;
+}
+
+li[class ^='a' i] {
+    color:brown;
+}
+
+article p:first-of-type::first-letter {
+    font-size: 150%;
+    font-weight: bold;
+    color: red;
+}
+
+h2 + p {color: blue;}
+
+h2 ~ p {
+    font-weight: bold;
+    font-size: x-large;
+    background-color: beige;
+}

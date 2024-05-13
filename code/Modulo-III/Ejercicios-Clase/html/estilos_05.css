@@ -1,0 +1,20 @@
+.outer {
+    border: 5px dashed black;
+}
+
+.box {
+    margin: 5px;
+    border: 2px solid yellow;
+    padding: 10px;
+    width: calc(70% - 25px);
+    background-color: rebeccapurple;
+    color: white;
+}
+
+.boxR {
+    margin: 30px;
+    width: 150px;
+    height: 150px;
+    background-color: brown;
+    transform: rotate(0.2turn);
+}
