@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elementos flex</title>
+    <style>
+        .box {
+            display: flex;
+            flex-direction: row;
+            background-color: aqua;
+        }
+        .box > div{
+            background-color: #F1F1F1;
+            border: 1px solid black;
+            margin: 2px;
+            padding: 5px;
+            font-size: 30px;
+        }
+        .box2 {
+            display: flex;
+            /* flex-direction: row;
+            flex-wrap: wrap; */
+            flex-flow: row wrap;
+            background-color: aqua;
+        }
+        .box2 > div{
+            background-color: #F1F1F1;
+            border: 1px solid black;
+            margin: 2px;
+            padding: 5px;
+            font-size: 30px;
+        }
+        .box3 {
+            display: flex;            
+            flex-flow: row wrap;
+            background-color: aqua;
+            align-items:flex-end;
+        }
+        .box3 > div{
+            background-color: #F1F1F1;
+            border: 1px solid black;
+            margin: 2px;
+            padding: 5px;
+            font-size: 30px;
+        }
+        .box4 {
+            display: flex;            
+            flex-flow: row wrap;
+            background-color: aqua;
+            align-items:flex-end;
+            justify-content:space-between;
+
+        }
+        .box4 > div{
+            background-color: #F1F1F1;
+            border: 1px solid black;
+            margin: 2px;
+            padding: 5px;
+            font-size: 30px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div>Texto de pruebas 1</div>
+        <div>Texto de pruebas 2</div>
+        <div>Texto de pruebas 3</div>
+    </div>
+    <br>
+    <div class="box2">
+        <div>Texto de pruebas 1</div>
+        <div>Texto de pruebas 2</div>
+        <div>Texto de pruebas 3</div>
+    </div>
+    <br>
+    <div class="box2">
+        <div style="flex-grow: 1;">Texto de pruebas 1</div>
+        <div style="flex-grow: 1;">Texto de pruebas 2</div>
+        <div style="flex-grow: 1;">Texto de pruebas 3</div>
+    </div>
+
+    <div class="box2">
+        <div style="flex-shrink: 1;">Texto de pruebas 1</div>
+        <div style="flex-grow: 1;">Texto de pruebas 2</div>
+        <div style="flex-shrink: 1;">
+            Texto<br>de<br>pruebas 3<br></div>
+    </div><br>
+    <div class="box3">
+        <div style="flex-shrink: 1;">Texto de pruebas 1</div>
+        <div style="flex-grow: 1;">Texto de pruebas 2</div>
+        <div style="flex-shrink: 1;">
+            Texto<br>de<br>pruebas 3<br></div>
+    </div>
+    <div class="box3">
+        <div >Texto de pruebas 1</div>
+        <div >Texto de pruebas 2</div>
+        <div >
+            Texto<br>de<br>pruebas 3<br></div>
+    </div>
+    <div class="box4">
+        <div >Texto de pruebas 1</div>
+        <div >Texto de pruebas 2</div>
+        <div >
+            Texto<br>de<br>pruebas 3<br></div>
+    </div>
+</body>
+</html>

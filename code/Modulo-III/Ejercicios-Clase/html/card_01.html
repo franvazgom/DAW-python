@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card ejemplo</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .main {
+            display: flex;            
+            flex-wrap: wrap;
+        }
+        .card {
+            /* border: 1px solid blue; */
+            margin-right: 2px;
+            margin-bottom: 3px;
+            flex:33%;
+            max-width: 33%;
+        }
+        .bodyCard {
+            background-color: coral;
+            color: aliceblue;
+            padding: 3px 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="card">
+            <img src="https://source.unsplash.com/random/200x200"
+                 style="width: 100%;">
+            <div class="bodyCard">
+                <h3>Titulo img 01</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum delectus illo laudantium adipisci? Perferendis mollitia totam similique fugit? Dicta, eligendi quas sunt commodi hic soluta illum minima obcaecati eum? Nostrum.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://source.unsplash.com/random/199x200" 
+                 style="width: 100%;">
+            <div class="bodyCard">
+                <h3>Titulo img 02</h3>
+                <p>Texto de la imgaen</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://source.unsplash.com/random/201x200"
+                 style="width: 100%;">
+            <div class="bodyCard">
+                <h3>Titulo img 03</h3>
+                <p>Texto de la imgaen</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://source.unsplash.com/random/201x201"
+                 style="width: 100%;">
+            <div class="bodyCard">
+                <h3>Titulo img 04</h3>
+                <p>Texto de la imgaen</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
