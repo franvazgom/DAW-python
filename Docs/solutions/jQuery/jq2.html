@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQ 1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+
+    </script>
+    <style>
+        thead {
+            font-weight: bold;
+        }
+
+        table,
+        td {
+            border: 1px solid black;
+        }
+
+        #panel {
+            text-align: center;
+            background-color: #e5eecc;
+            border: 1px solid #c3c3c3;
+            padding: 50px;
+            display: none;
+        }
+
+        /*  https://jsonplaceholder.typicode.com/
+            http://jsonservices.com/cgi-bin/services.pl
+            http://api.nobelprize.org/v1/prize.json
+            htp://api.nobelprize.org/v1/prize.json?category=physics&year=1997&yearto=1999
+
+            https://plantplaces.com/perl/mobile/viewplantsjson.pl?Combined_Name=Trumpetbush 
+            https://plantplaces.com/perl/viewplantdetails.pl?filter=plant&plant_ID=3135
+
+            const response = await fetch(url);
+            const jsonData = await response.json();
+        
+        */
+    </style>
+</head>
+
+<body>
+    <table id="tabla1">
+        <thead>
+            <tr>
+                <td>Nombre</td>
+                <td>Apellido Paterno</td>
+                <td>Apellido Materno</td>
+                <td>Edad</td>
+            </tr>
+        </thead>
+        <Tbody>
+            <tr>
+                <td>Francisco</td>
+                <td>Vázquez</td>
+                <td>Gómez</td>
+                <td>46</td>
+            </tr>
+            <tr>
+                <td>Juliana</td>
+                <td>Vázquez</td>
+                <td>Salcedo</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Natalia</td>
+                <td>Vázquez</td>
+                <td>Salcedo</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Marina</td>
+                <td>Salcedo</td>
+                <td>Fernández</td>
+                <td>46</td>
+            </tr>
+            <tr>
+                <td>Julia</td>
+                <td>Gómez</td>
+                <td>Germán</td>
+                <td>67</td>
+            </tr>
+        </Tbody>
+    </table>
+    <br><br>
+    <button id="btn6">Agregar renglon</button>
+    <br><br>
+    <div id="div1">
+        <p id="parrafo">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum eveniet quo, fuga accusamus cupiditate,
+            suscipit qui adipisci, laborum aliquid tempore aliquam impedit aperiam natus ad labore quasi atque quisquam
+            sint!
+        </p>
+    </div>
+
+    <img id="book" src="../imagen1.jpg" alt="" width="300" height="300">
+
+    <br><br>
+    <button id="btn1">Boton</button>
+    <button id="btn2">Boton 2</button>
+    <br><br>
+    <input type="text" id="caja" style="width: 300px;" />
+    <br><br>
+    <button id="btn3">slideDown</button>
+    <button id="btn4">slideUp</button>
+    <br><br>
+    <div id="panel">
+        Hola
+    </div>
+    <br><br>
+    <button id="btn5">Muevete</button>
+    <br><br>
+    <div id="div4" style="background: red; height: 100px; width: 100px; position: absolute;">
+    </div>
+
+
+
+    <script>
+        function muestraAlerta() {
+            alert('Pruebas');
+        }
+
+        $(function () {
+            $('p').mouseenter(function () {
+                $(this).hide(1000);
+            });
+            $('p').mouseleave(function () {
+                $(this).show(1000);
+            });
+            $('#btn1').click(function () {
+                //$('#book').toggle('slow');
+                $('#book').fadeOut("slow");
+            });
+            $('#btn2').click(function () {
+                $('#book').fadeIn("slow");
+            });
+            $('#btn3').click(function () {
+                $('#panel').slideDown('slow');
+            });
+            $('#btn4').click(function () {
+                $('#panel').slideUp('slow');
+            });
+            $('#btn5').click(function () {
+                $('#div4').animate({
+                    left: '500px',
+                    opacity: '0.5',
+                    height: '200px',
+                    width: '200px'
+                }, 3000);
+            });
+            $('#btn6').click(function () {
+                console.log($('#tabla1 >tbody').text());
+                //$('#tabla1 tbody').append('<tr><td>Juan</td><td>Perez</td><td>Gonzalez</td><td>50</td></tr>');
+                $('#tabla1 tr:last').after('<tr><td>Juan</td><td>Perez</td><td>Gonzalez</td><td>50</td></tr>');
+                $('#parrafo').append(' Hola');
+            });
+        });
+
+    </script>
+</body>
+
+</html>
