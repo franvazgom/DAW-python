@@ -1,0 +1,129 @@
+<!-- 
+    1.- Se coloca el estilo display:flex para hacer el sitio responsivo. 
+    2.- Se coloca box-sizing para el ancho máximo y sitio resposivo. 
+    3.- 
+  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> 
+        * {
+            box-sizing: border-box;
+        }      
+        .card {
+            box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.2s;
+            
+            /* Adicional 
+            width: 40%;
+            */
+            border-radius: 10px;
+            
+            max-width: 22%; 
+            margin-right: 25px;
+
+            margin-bottom: 25px;
+            
+        }
+
+        .card:hover {
+            box-shadow: 0 2px 20px 0 rgba(247, 30, 30, 0.7);
+        }
+
+        .bodyCard {
+            padding: 3px 16px;  
+            /* Adicional 
+            */        
+            background-color:coral; 
+            color: aliceblue;
+        }
+        /* Adicional */
+        .main {
+            display: flex;            
+            flex-wrap: wrap;
+        }
+        
+        @media(max-width:1024px) {
+            .card {
+                flex: 21%;
+                max-width: 21%;
+            }
+        }
+
+        @media(max-width:800px) {
+            .card {
+                flex: 27%;
+                max-width: 27%;
+            }
+        }
+        @media(max-width:600px) {
+            .card {
+                flex: 100%;
+                max-width: 100%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <h2>Tarjetas</h2>
+    <div class="main">
+        <div class="card">
+            <img src="https://source.unsplash.com/random/200x200" alt="" style="width: 100%;">
+            <div class="bodyCard">
+                <h3><b>Titulo de la tarjeta</b></h3>                
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At praesentium, id nisi magnam rem, dolor</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://source.unsplash.com/random/201x201" alt="" style="width: 100%;">
+            <div class="bodyCard">
+                <h3><b>Titulo de la tarjeta2</b></h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At praesentium, id nisi magnam rem, dolor</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://source.unsplash.com/random/202x202" alt="" style="width: 100%;">
+            <div class="bodyCard">
+                <h3><b>Titulo de la tarjeta2</b></h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At praesentium, id nisi magnam rem, dolor</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://source.unsplash.com/random/199x199" alt="" style="width: 100%;">
+            <div class="bodyCard">
+                <h3><b>Titulo de la tarjeta2</b></h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At praesentium, id nisi magnam rem, dolor</p>
+            </div>
+        </div>    
+        <div class="card">
+            <img src="https://source.unsplash.com/random/205x200" alt="" style="width: 100%;">
+            <div class="bodyCard">
+                <h3><b>Titulo de la tarjeta</b></h3>                
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At praesentium, id nisi magnam rem, dolor</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://source.unsplash.com/random/205x201" alt="" style="width: 100%;">
+            <div class="bodyCard">
+                <h3><b>Titulo de la tarjeta2</b></h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At praesentium, id nisi magnam rem, dolor</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://source.unsplash.com/random/205x205" alt="" style="width: 100%;">
+            <div class="bodyCard">
+                <h3><b>Titulo de la tarjeta2</b></h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At praesentium, id nisi magnam rem, dolor</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+<!-- 
+    1.- table_header, método para colocar el header de la tabla y el contenido el select
+    2.- Desde que se crea el DOM se realiza la consulta mediante AJAX. 
+    3.- Se programa la funcionalidad del keypress
+    4.- Se realiza la función filter_information para filtrar la información de acuerdo al texto escrito por el usuario. 
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax demo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+    </script>
+    <style>
+        thead {
+            font-weight: bold;
+        }
+        table, td {
+            border: 1px solid black;
+        }
+        .container {
+            padding: 10px;
+            margin-top: 25px;
+            background-color: beige;
+        }               
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label for="select_campos">En el campo </label>
+        <select name="select_campos" id="select_campos">
+        </select>
+        <span>contiene: </span>
+        <input id="box_search" type="text" style="width: 200px;">    
+        <br><br>
+        <table id="tabla1">
+            <thead>            
+            </thead>
+            <tbody>            
+            </tbody>
+        </table>
+    </div>
+    <script>
+        var campos = ['id', 'Username', 'Name', 'Email', 'City', 'Company']; 
+        var tr = '<tr>sust</tr>';
+        var td = '<td>sust</td>';
+        var option =  '<option value="sust">sust</option>'; 
+        
+        function table_header() {
+            var row = ""; 
+            var opt = ""; 
+            for (let i=0; i<campos.length; i++) {
+                row += td.replace('sust',campos[i]); 
+                opt += option.replaceAll('sust', campos[i]); 
+            }
+            row = tr.replace('sust', row); 
+            $('#tabla1 thead').append(row); 
+            $('#select_campos').append(opt); 
+        }
+
+        function createRow(user) {            
+            var row =   td.replace('sust',user.id) + 
+                        td.replace('sust',user.username) + 
+                        td.replace('sust',user.name) + 
+                        td.replace('sust',user.email) + 
+                        td.replace('sust',user.address.city) +
+                        td.replace('sust',user.company.name) 
+            row = tr.replace('sust', row); 
+            $('#tabla1 tbody').append(row); 
+        }
+        function recorreUsuario(data) { 
+            $('#tabla1 tbody').empty();            
+            $.each(data, function(){                
+                createRow(this); 
+            });
+            $('tr:odd').css('background-color', '#c1c1c1');
+
+        }
+
+        function consultaUsuarios() {
+            my_url = 'https://jsonplaceholder.typicode.com/users'
+            $.ajax({
+                method: "GET",
+                url: my_url
+                //data: ... 
+            }).done(function(data) {
+                recorreUsuario(data);
+                return data; 
+            }).fail(function() {
+                alert("Algo salió mal");
+            }).always(function() {
+                // alert("Siempre se ejecuta")
+            });
+        }
+        
+        function filter_information(last_ch) {
+            //consultaUsuarios();
+            //obtiene cada uno de los registros de la tabla 
+            //var text = $('#box_search').val()  + last_ch;             
+            var text = $('#box_search').val();
+            if (text.length == 0){
+                consultaUsuarios();
+                return
+            }
+            var field = $('#select_campos').val();
+            var pos = campos.indexOf(field, 0);             
+            $('#tabla1 tbody tr').each(function(){
+                let col = $(this).find('td').eq(pos).text();                  
+                if (col.indexOf(text) < 0){                    
+                    $(this).remove(); 
+                }
+            }); 
+
+        }
+
+        $(function(){
+            table_header(); 
+            consultaUsuarios();
+            $('#box_search').keyup(function (event){
+                //console.log(event.key);
+                if (event.key == 'Enter'){
+                    filter_information(''); 
+                }else {
+                    filter_information(event.key); 
+                }
+            }); 
+        });
+    </script>
+</body>
+</html>
