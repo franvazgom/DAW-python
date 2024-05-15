@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css_flex_01.html">
+</head>
+<body>
+    <h3>Eje principal se configura mediante la propiedad flex-direction</h3> 
+    <ul>
+        <li>row</li>
+        <li>row-reverse</li>
+        <li>column</li>
+        <li>column-reverse</li>
+    </ul>
+    <h4>row o rw-reverse</h4>
+    <p>El eje principal correrá a lo largo de la fila según la dirección de la fila</p>
+    <h4>column o column-reverse</h4>
+    <p>El ejec principal correrá desde el borde superior de la página hasta el final</p>
+    <h3>El eje cruzado</h3>
+    <p>El eje cruzado va perpendicular al eje principal</p>
+    <p>Flexbox posee propiedad que permiten alinear y justificar el contenido sobre cualquier eje</p>
+    <h1>El contendor flex</h1>
+    <h3>Contendor flex</h3>
+    <p>Para crear un contenedor flex, se establece la propiedad del área del contendor display como flex o inline-flex</p>
+    <h2>Los hijos directos del contenedor flex se vuelven items flex</h2>
+    <h3>Los items flex tienen el siguiente comportamiento</h3>
+    <ul>
+        <li>Los items se despliegan sobre una fila (la propiedad flex-direction por defecto es row)</li>
+        <li>Los items empiezan desde el margen inicial sobre el eje principal</li>
+        <li>Los items no se ajustan en la dimensión principal, pero se pueden contraer</li>
+        <li>Los items se ajustarán para llenar el tamaño del eje cruzado</li>
+        <li>La propiedad flex-basis es definida como auto</li>
+        <li>La propiedad flex-wrap es definida como nowrap </li>
+    </ul>
+    <p>El resultado es que todos los items se alinerán en una sola fila, usando el tamaño del contenedor como su tamaño en el eje principal</p>
+    <p>Si hay más items de los que caben en el contenedor, estos no pasarán más abajo si no que sobrepasarán el margen.</p>
+    <p>Si hay más altos que otros, todos los ítems serán ajustados en el eje cruzado para alcanzar al mayor</p>
+    
+</body>
+</html>
