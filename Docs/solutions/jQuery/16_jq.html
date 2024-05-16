@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Jquery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+    </script>
+    <style>
+        .color_rojo {
+            color:red;            
+        }
+        .fondo_azul {
+            background-color:aqua;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id='nombre' name='nombre'/>
+        <input type='hidden' id='oculto' name='oculto'/>
+        <br><br><br>
+        <input type="submit" value='Enviar'/>        
+    </form>
+    <br><br><br>
+    <button id='btn_1'>Obtener valor</button>
+    <br><br><br>
+    <div id='div_1'>
+        <p id='p_1' class='color_rojo fondo_azul'>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum in corporis minus obcaecati soluta sapiente, quasi aliquam possimus distinctio, molestias adipisci assumenda. At, temporibus dignissimos. Accusantium iusto ullam quas expedita.
+        </p>
+        <br><br><br>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto at dolores suscipit dolore ratione earum explicabo aspernatur distinctio quod omnis consequatur, ullam animi ipsam temporibus autem, id, odit similique dolor?
+            Non dolorum mollitia consequuntur optio esse obcaecati minima unde quae velit, placeat libero corporis perferendis porro voluptatem quia, praesentium saepe id omnis inventore. Beatae cum molestias animi dolorum labore? Voluptatem.
+        </p>
+    </div>
+    <button id='btn_2'>Hace algo</button>
+    <script>
+        $(function(){
+            $('#btn_1').click(function(){
+                let valor = $('#nombre').val(); 
+                $('#oculto').val('12345678'); 
+                alert(valor + $('#oculto').val() ); 
+            }); 
+            $('#btn_2').click(function(){
+                //$('#p_1').after('<p> Un final feliz!! </p>'); 
+                //$('#div_1').empty(); 
+                $('#p_1').addClass('fondo_azul'); 
+                //$('#p_1').removeClass('color_rojo'); 
+            }); 
+        }); 
+    </script>
+
+</body>
+</html>

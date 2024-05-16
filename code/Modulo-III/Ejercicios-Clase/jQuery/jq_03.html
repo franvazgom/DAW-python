@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Table</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" 
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" 
+        crossorigin="anonymous">
+    </script>
+    <style>
+        table, th, td {
+            border: 1px solid black;            
+        }
+    </style>
+</head>
+<body>    
+    <table id="tablaNombres">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido Paterno</th>
+                <th>Apellido Materno</th>
+                <th>Edad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Francisco</td>
+                <td>Vázquez</td>
+                <td>Gómez</td>
+                <td>46</td>
+            </tr>
+            <tr>
+                <td>Juliana</td>
+                <td>Vázquez</td>
+                <td>Salcedo</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Natalia</td>
+                <td>Vázquez</td>
+                <td>Salcedo</td>
+                <td>6</td>
+            </tr>            
+            <tr>
+                <td>Marina</td>
+                <td>Salcedo</td>
+                <td>Fernández</td>
+                <td>46</td>
+            </tr>
+            <tr>
+                <td>Julia</td>
+                <td>Gómez</td>
+                <td>Germán</td>
+                <td>67</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <button id="btn1">Cambia formato de table</button>    
+    <br><br>
+    <table id="table2">
+        <tr>
+            <th>Elemento 1</th>
+            <th>Elemento 2</th>
+            <th>Elemento 3</th>
+        </tr>
+        <tr>
+            <td>A</td>
+            <td>B</td>
+            <td>C</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+    </table>
+    <br>
+    <input type="text" id="box1" style="width: 400px;" />
+    <br><br>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae tempore, molestias voluptate voluptates nemo assumenda eius accusamus sint commodi eum facere vitae quo odio non inventore quasi reiciendis, adipisci provident.</p>
+    <br>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et rem iure veritatis at eligendi mollitia, possimus laudantium sequi, libero architecto omnis voluptatibus inventore? Rem officiis neque sequi quam consequuntur praesentium!</p>
+    <script>
+        $(function(){
+            $('#btn1').click(function(){
+                if ($(this).text() == "Cambia formato de table") {
+                    $("#tablaNombres tr:odd").css('background', '#c1c1c1');
+                    $(this).text("Elimina formato");
+                } else {
+                    $("#tablaNombres tr:odd").css('background', 'white');
+                    $(this).text("Cambia formato de table");
+                }
+            });
+            $('p').mouseenter(function(){
+                $(this).hide(1000);
+            });
+            $('p').mouseleave(function(){
+                $(this).show(1000);
+            });
+            $('#table2 tr').mouseover(function(){
+                $(this).css('background', 'yellow');
+            });
+            $('#table2 tr').mouseleave(function(){
+                $(this).css('background', 'white');
+            });
+            $("tr").dblclick(function(){
+                $('#box1').val($(this).text());
+            });
+        }); 
+    </script>
+</body>
+</html>

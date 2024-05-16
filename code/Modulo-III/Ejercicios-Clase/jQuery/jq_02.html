@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery 2 ejemplos</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" 
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" 
+        crossorigin="anonymous">
+    </script>
+    <style>
+        .color_rojo {
+            color:red;
+            background-color: aqua;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi consectetur laudantium commodi harum numquam facere cupiditate at maiores error dicta? Dolore dolor nulla voluptas ratione assumenda ipsam, unde impedit beatae?</p>
+    <p class="color_rojo">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate adipisci placeat ipsum alias veritatis dignissimos voluptas odio necessitatibus tenetur repellendus ab consequuntur architecto quo, nam cupiditate inventore animi aut eius.
+    </p>
+    <button id="btn_1">Ocultar parrafo</button>
+
+    <script>
+        $(function(){
+            $('#btn_1').click(function(){
+                if ($(this).text() == "Ocultar parrafo") {
+                    $(".color_rojo").hide();
+                    $(this).text("Mostrar parrafo");
+                }else {
+                    $(".color_rojo").show();
+                    $(this).text("Ocultar parrafo");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

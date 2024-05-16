@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery 01</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam voluptas delectus eum numquam tenetur dolores accusantium cumque commodi voluptatum in harum ratione eaque accusamus vero, ipsum atque possimus enim exercitationem?</p>
+    <button id="btn01">Oculta</button>
+
+    <script>
+        $(function(){
+            console.log("Test");
+            $("#btn01").click(function(){
+                var texto = $(this).text(); 
+                if (texto == "Oculta") {
+                    $(this).text("Muestra");
+                    $("p").hide(); 
+                }else {
+                    $(this).text("Oculta");
+                    $("p").show(); 
+                }
+            }); 
+        }); 
+         
+    </script>
+</body>
+</html>

@@ -12,17 +12,36 @@
             display: flex;            
             flex-wrap: wrap;
         }
-        .card {
-            /* border: 1px solid blue; */
+        .card {            
+            box-shadow: 0 4px 10px 0 rgba(0, 30, 30, 0.5);
             margin-right: 2px;
-            margin-bottom: 3px;
-            flex:33%;
-            max-width: 33%;
+            margin-bottom: 3px;            
+        }
+        .card:hover {
+            box-shadow: 0 2px 20px 0 rgba(247, 30, 30, 0.7);
         }
         .bodyCard {
             background-color: coral;
             color: aliceblue;
             padding: 3px 16px;
+        }
+        @media(min-width:800px) {
+            .card {
+                flex: 19%;
+                max-width: 19%;
+            }
+        }
+        @media(max-width:800px) {
+            .card {
+                flex: 32%;
+                max-width: 32%;
+            }
+        }
+        @media(max-width:600px) {
+            .card {
+                flex: 100%;
+                max-width: 100%;
+            }
         }
     </style>
 </head>
@@ -54,6 +73,14 @@
         </div>
         <div class="card">
             <img src="https://source.unsplash.com/random/201x201"
+                 style="width: 100%;">
+            <div class="bodyCard">
+                <h3>Titulo img 04</h3>
+                <p>Texto de la imgaen</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://source.unsplash.com/random/198x201"
                  style="width: 100%;">
             <div class="bodyCard">
                 <h3>Titulo img 04</h3>

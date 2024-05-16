@@ -1,3 +1,8 @@
+<!-- 
+    1.- Realiza una conexión AJAX
+    2.- Muestra el uso de $.each
+    3.- Muestra la información de cada uno de los campos mediante el operador "."
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,36 +16,23 @@
 <body>
     <button id="btn1">Realizar consulta</button>
     <script>
-        function recorreUsuario(data) {
-            // console.log(data[1].email);
-            // console.log(data.length);
-            // console.log(data[1]);
-            
-            /* 
-            for (var i in json) {
-                for (var j in json[i]) {
-                    console.log(json[i][j]);
-                }
-                }
-            */
-           
-            var datos = data[1];
-            console.log(datos);
-            $.each(datos, function(key, value) {
-                console.log(key+"..."+value);
-                //alert(this.key+"..."+this.value);
-            });   
+        function recorreUsuario(data) {            
+            $.each(data, function(){
+                //console.log(this.name + " " + this.address.street); 
+                console.log(this); 
+            });
         }
 
         function consultaUsuarios() {
-            my_url = 'https://jsonplaceholder.typicode.com/users'
+            //my_url = 'https://jsonplaceholder.typicode.com/users'
+            my_url = 'https://api.nobelprize.org/v1/prize.json?category=physics&year=2000&yearto=2010'; 
             $.ajax({
                 method: "GET",
                 url: my_url
                 //data: ... 
             }).done(function(data) {
-                // console.log(data);                
                 recorreUsuario(data);
+                return data; 
             }).fail(function() {
                 alert("Algo salió mal");
             }).always(function() {
@@ -49,10 +41,7 @@
         }
         $(function(){
             $('#btn1').click(function(){
-                 consultaUsuarios();
-                
-                // const myJSON = JSON.stringify(data);
-                // console.log(myJSON);
+                consultaUsuarios();                
             });
         });
     </script>
