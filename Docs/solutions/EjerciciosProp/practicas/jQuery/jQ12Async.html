@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async test</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    
+    <script>
+        async function consultaPremios() {
+            try {
+                const url = new URL('https://api.nobelprize.org/v1/prizze.json');                
+                let parametros = {'category':'chemistry', 'year':'1930', 'yearto':'2021'};
+                url.search = new URLSearchParams(parametros);
+                const response = await fetch(url);
+                if (!response.ok) {
+                    console.log('response....');
+                    const mensaje = String(response.status);
+                    throw new Error(mensaje);
+                }
+                const data = await response.json();
+                console.log(data);
+            } catch(err) {
+                alert(err);
+            }
+        }
+
+        $(function(){
+            consultaPremios();
+        });
+
+    </script>
+</body>
+</html>

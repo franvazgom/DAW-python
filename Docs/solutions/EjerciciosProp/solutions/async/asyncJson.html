@@ -1,0 +1,40 @@
+<!-- 
+    Referencia: https://zetcode.com/javascript/fetch/ 
+    
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Json</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <button id="btnAjax">Consulta Json</button>
+    
+    <script>                    
+        async function consultaAjax() {   
+            const myLink = 'https://api.nobelprize.org/v1/prize.json?category=physics&year=2000&yearto=2010'; 
+            try {
+                const response = await fetch(myLink);
+                if (!response.ok) {
+                    const message = String(response.status);
+                    throw new Error(message); 
+                }
+                const data = await response.json();
+                console.log(data); 
+            } catch(err) {
+                alert(err); 
+            }
+        }
+
+        $(function(){
+            $('#btnAjax').click(function(){
+                consultaAjax();
+            });
+        }); 
+    </script>
+</body>
+</html>

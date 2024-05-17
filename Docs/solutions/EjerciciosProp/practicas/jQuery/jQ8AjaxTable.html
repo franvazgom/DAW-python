@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba Ajax - Tabla</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        thead {
+            font-weight: bold;
+        }
+        table, td {
+            border: 1px solid black;
+            font-size: 1.2em;
+        }
+        #btn1 {
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn1">Obtiene usuarios</button>
+    <br><br>
+    <table id="tabla1">
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Username</td>
+                <td>Name</td>
+                <td>Email</td>
+                <td>City</td>
+                <td>Company</td>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <script>
+        function agregaRegistroTabla(usuario){
+            let tr = '<tr>sust</tr>';
+            let td = '<td>sust</td>';
+            let registro =  td.replace('sust', usuario.id) + 
+                            td.replace('sust', usuario.username) + 
+                            td.replace('sust', usuario.name) + 
+                            td.replace('sust', usuario.email) + 
+                            td.replace('sust', usuario.address.city) + 
+                            td.replace('sust', usuario.company.name);
+            registro = tr.replace('sust', registro);
+            $('#tabla1 tbody').append(registro);
+        }
+
+        function recorreUsuarios(usuarios) {
+            //Se limpia el body de la tabla. 
+            $('#tabla1 tbody').empty();
+            //Se recorre el arreglo de usuarios        
+            $.each(usuarios, function(){
+                agregaRegistroTabla(this);                
+            });
+            //Se coloca a todos los renglones impares un fondo gris. 
+            $('tr:odd').css('background', '#c1c1c1');
+        }
+
+        function consultaUsuarios() {
+            miUrl = 'https://jsonplaceholder.typicode.com/users';
+            $.ajax({
+                method: 'GET',
+                url: miUrl
+                //data:
+            }).done(function(data){
+                recorreUsuarios(data);
+            }).fail(function() {
+                alert('Algo salió mal');
+            }).always(function() {
+                console.log('Siempre se ejecuta....');
+            });
+        }
+
+        $(function(){
+            $('#btn1').click(function(){
+                consultaUsuarios();
+            });
+        });
+    </script>
+</body>
+</html>

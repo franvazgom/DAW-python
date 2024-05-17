@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQ 1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+</head>
+<body>
+    <p>Parrafo 1</p>
+    <p>Parrafo 2</p>
+    <div id="div1" style="display: none;">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At porro, doloribus in corrupti officia enim cumque hic vitae expedita eius autem praesentium ut sapiente eligendi laborum earum unde eaque recusandae.</p>
+    </div>
+    <div id="div2" style="background:red; height:100px; width:100px; position:absolute;">
+    </div>
+    <hr>
+    <br><br><br><br><br><br><br><br>
+    <button id="btn1">Mueve</button>
+    <button id="btn2">regresa</button>
+    <button id="btn3">callback</button>
+    <button id="btn4">callback2</button>
+
+    <script>
+        $(function(){ 
+            $("#btn1").click(function(){            
+                $("#div2").animate({
+                    left:"250px",
+                    opacity: '0.5',
+                    height: "200px",
+                    width: "200px"
+                });       
+            });
+            $("#btn2").click(function(){            
+                $("#div2").animate({
+                    left:"0px",
+                    opacity: '0.5',
+                    height: "100px",
+                    width: "100px"
+                });       
+            }); 
+            $("#btn3").click(function(){            
+                $("p").hide(3000, function(){
+                    console.log("Verificación");         
+                });       
+            }); 
+
+            $("#btn4").click(function(){            
+                $("p").hide(3000, cambiaColor);    
+            }); 
+        });
+        
+        function cambiaColor() {
+            console.log("Verificación"); 
+        }
+
+    </script>
+</body>
+</html>

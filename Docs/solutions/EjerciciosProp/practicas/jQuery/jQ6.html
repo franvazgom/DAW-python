@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Append</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        .container {
+            padding: 10px;
+            margin-top: 25px;
+            background-color: beige;
+        }
+        .cajaTexto {
+            width: 250px;
+            
+        }
+        button, .cajaTexto {
+            font-size: 1.5em;
+            margin-top: 25px;
+            margin-right: 25px;
+        }
+        thead {
+            font-weight: bold;
+        }
+        table, td {
+            border: 1px solid black;
+            font-size: 1.2em;
+        }
+        table {
+            border-spacing: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input class="cajaTexto" id="nombre" type="text" placeholder="Nombre">
+        <input class="cajaTexto" id="apPaterno" type="text" placeholder="Apellido paterno">
+        <input class="cajaTexto" id="apMaterno" type="text" placeholder="Apellido materno">
+        <br><br>
+        <input class="cajaTexto" style="width: 350px;" id="email" type="email" placeholder="Correo electónico">
+        <button id="btnAgregar">Agrega registro</button>
+        <br><br>
+        <table id="tabla1">
+            <thead>
+                <td>Id</td>
+                <td>Nombre</td>
+                <td>Apellido Paterno</td>
+                <td>Apellido Materno</td>
+                <td>Email</td>
+            </thead>
+            <tbody>                
+            </tbody>
+        </table>        
+    </div>
+    
+    <script>
+        var contador = 1;
+        function agregarRegistro() {
+            let tr = '<tr>sust</tr>';
+            let td = '<td>sust</td>';
+            let registro =  td.replace('sust', String(contador)) + 
+                            td.replace('sust', $('#nombre').val()) +
+                            td.replace('sust', $('#apPaterno').val()) +
+                            td.replace('sust', $('#apMaterno').val()) +
+                            td.replace('sust', $('#email').val());
+            registro = tr.replace('sust', registro);
+            $('#tabla1 tbody').append(registro);
+            contador ++;
+        }
+
+        $(function(){
+            $('#btnAgregar').click(function(){
+                agregarRegistro();
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!-- 
+    1.- Despues de realizar la consulta de AJAX. 
+    2.- Construye cada uno de los renglones que se van a agregar a la tabla
+    3.- Cada vez que se realiza la consulta, se elimina el contenido de tbody con el método empty 
+    4.- Despues de crear la tabla, se coloca un css, para mostrar los renglones impares con fondo gris 
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax demo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+    </script>
+    <style>
+        thead {
+            font-weight: bold;
+        }
+        table, td {
+            border: 1px solid black;
+        }        
+    </style>
+</head>
+<body>
+    <button id="btn1">Realizar consulta</button>
+    <br><br>
+    <table id="tabla1">
+        <thead>
+            <tr>
+                <td>id</td>
+                <td>Username</td>
+                <td>Name</td>
+                <td>Email</td>
+                <td>City</td>
+                <td>Company</td>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+    
+    <script>
+        function createRow(user) {
+            var tr = '<tr>sust</tr>';
+            var td = '<td>sust</td>'; 
+            var row =   td.replace('sust',user.id) + 
+                        td.replace('sust',user.username) + 
+                        td.replace('sust',user.name) + 
+                        td.replace('sust',user.email) + 
+                        td.replace('sust',user.address.city) +
+                        td.replace('sust',user.company.name) 
+            row = tr.replace('sust', row); 
+            $('#tabla1 tbody').append(row); 
+        }
+        function recorreUsuario(data) { 
+            $('#tabla1 tbody').empty();            
+            $.each(data, function(){
+                //console.log(this.id, this.username, this.name, this.email, this.address.city, this.company.name); 
+                createRow(this); 
+            });
+            $('tr:odd').css('background-color', '#c1c1c1');
+
+        }
+
+        function consultaUsuarios() {
+            my_url = 'https://jsonplaceholder.typicode.com/users'
+            $.ajax({
+                method: "GET",
+                url: my_url
+                //data: ... 
+            }).done(function(data) {
+                recorreUsuario(data);
+                return data; 
+            }).fail(function() {
+                alert("Algo salió mal");
+            }).always(function() {
+                // alert("Siempre se ejecuta")
+            });
+        }
+        $(function(){
+            $('#btn1').click(function(){
+                consultaUsuarios();                
+            });            
+        });
+    </script>
+</body>
+</html>

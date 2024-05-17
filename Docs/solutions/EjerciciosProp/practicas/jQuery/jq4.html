@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery 4</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        #panel {
+            text-align: center;
+            background-color: #e5eecc;
+            border: 1px solid #c3c3c3;
+            padding: 50px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn0">Encadenamiento de funciones..</button> 
+    <p id="parrafo1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus eveniet quia dolorem ad, pariatur nesciunt
+        quibusdam eaque eos excepturi fuga doloribus inventore nisi eius? Alias repudiandae iusto eum error quidem!
+        Recusandae eaque consequuntur dicta ipsa autem quisquam aperiam officiis molestiae culpa at. Placeat, quam alias
+        vel ab odio, modi minima hic repudiandae perspiciatis voluptate itaque illo quidem amet facilis totam.
+    </p>
+    <p id="parrafo2" style="color:blue;">Este es <span style="color:black">TEXTO</span> el parrafo 2</p>
+    <button id="btnHtml">Muestra el HTML del parrafo 2</button>
+    <br><br>
+    <img id="img1" src="../imagen1.jpg" width="300" height="300">
+    <br><br>
+    <button id="btn1">Toggle</button>
+    <br><br>
+    <button id="btn2">fadeOut</button>
+    <button id="btn3">fadeIn</button>
+    <br><br>
+    <button id="btn4">slideDown</button>
+    <button id="btn5">slideUp</button>
+    <div id="panel">
+        Texto del panel
+    </div>
+    <br><br><br><br><br>
+    <button id="btn6">animate</button>
+    <div id="cuadro" style="background:red; height:100px; width: 100px; position: absolute;">
+    </div>
+    <script>
+        $(function () {
+            $('#btn1').click(function () {
+                //$('#img1').toggle('slow');
+                $('#img1').toggle(1500);
+            });
+            $('#btn2').click(function () {
+                $('#img1').fadeOut(1500);
+            });
+            $('#btn3').click(function () {
+                $('#img1').fadeIn(1500);
+            });
+            $('#btn4').click(function () {
+                $('#panel').slideDown(1500);
+            });
+            $('#btn5').click(function () {
+                $('#panel').slideUp(1500);
+            });
+            $('#btn6').click(function () {
+                $('#cuadro').animate({
+                    left: '500px',
+                    opacity: '0.5',
+                    height: '250px',
+                    width: '250px'
+                }, 3000);
+            });
+            //Encadenamientos de funciones.. 
+            $('#btn0').click(function () {
+                $('#parrafo1').css('color', 'red').slideUp(2000).slideDown(2000);
+            });
+            $('#btnHtml').click(function () {
+                alert($('#parrafo2').html());                
+                console.log($('#parrafo2').html());
+            });
+        });
+    </script>
+</body>
+</html>

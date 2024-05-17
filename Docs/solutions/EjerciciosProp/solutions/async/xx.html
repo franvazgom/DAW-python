@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    
+    <button id="btnAjax">Consulta Json</button>
+
+    <script>
+        // Assign handlers immediately after making the request,
+        // and remember the jqxhr object for this request
+        var myLink = 'https://api.nobelprize.org/v1/prize.json?category=physics&year=2019&yearto=2022'
+        //let link = 'https://plantplaces.com/perl/mobile/viewplantsjson.pl?Combined_Name=Trumpetbush'
+        //var proxy = 'https://cors-anywhere.herokuapp.com/';
+        async function consultaAjax() {   
+            try {
+                const response = await fetch(myLink);
+                const data = await response.json();
+                console.log(data); 
+            } catch(err) {
+                alert(err); 
+            }
+        }
+
+        $(function(){
+            $('#btnAjax').click(function(){
+                consultaAjax();
+            });
+        });
+
+        
+    </script>
+</body>
+</html>

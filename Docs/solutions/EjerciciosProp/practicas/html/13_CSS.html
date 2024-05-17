@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box-sizing</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 4px;
+        }
+        .column {
+            flex: 25%;
+            padding: 4px;
+            margin-top: 10px;
+        }
+        img {
+            margin-top: 15px;
+        }
+        .column img {
+            vertical-align: middle;
+        }
+        @media(max-width:800px) {
+            .column {
+                flex: 50%;
+                max-width: 100%;
+            }
+        }
+        @media(max-width:600px) {
+            .column {
+                flex: 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="column">
+            <img src="https://source.unsplash.com/random/300x600" style="width:100%;">
+            <img src="https://source.unsplash.com/random/300x800" style="width:100%;">
+            <img src="https://source.unsplash.com/random/300x1200" style="width:100%;">
+            <img src="https://source.unsplash.com/random/300x900" style="width:100%;">
+            <img src="https://source.unsplash.com/random/300x850" style="width:100%;">
+            <img src="https://source.unsplash.com/random/300x750" style="width:100%;">
+        </div>
+        <div class="column">
+            <img src="https://source.unsplash.com/random/500x801" style="width:100%;">
+            <img src="https://source.unsplash.com/random/500x601" style="width:100%;">
+            <img src="https://source.unsplash.com/random/500x901" style="width:100%;">
+            <img src="https://source.unsplash.com/random/500x1201" style="width:100%;">
+            <img src="https://source.unsplash.com/random/500x751" style="width:100%;">
+            <img src="https://source.unsplash.com/random/500x851" style="width:100%;">
+        </div>
+        <div class="column">
+            <img src="https://source.unsplash.com/random/501x600" style="width:100%;">
+            <img src="https://source.unsplash.com/random/501x800" style="width:100%;">
+            <img src="https://source.unsplash.com/random/501x1200" style="width:100%;">
+            <img src="https://source.unsplash.com/random/501x900" style="width:100%;">
+            <img src="https://source.unsplash.com/random/501x850" style="width:100%;">
+            <img src="https://source.unsplash.com/random/501x750" style="width:100%;">
+        </div>
+        <div class="column">
+            <img src="https://source.unsplash.com/random/500x802" style="width:100%;">
+            <img src="https://source.unsplash.com/random/500x603" style="width:100%;">
+            <img src="https://source.unsplash.com/random/500x902" style="width:100%;">
+            <img src="https://source.unsplash.com/random/500x1203" style="width:100%;">
+            <img src="https://source.unsplash.com/random/500x752" style="width:100%;">
+            <img src="https://source.unsplash.com/random/500x853" style="width:100%;">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba Ajax - Tabla 2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="icon" type="image/x-icon">
+    <style>
+        thead {
+            font-weight: bold;
+        }
+        table, td {
+            border: 1px solid black;
+            font-size: 1.2em;
+        }
+        #btn1 {
+            color:blue;
+        }
+        .container {
+            padding: 10px;
+            margin-top: 25px;
+            background-color: beige;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">        
+        <br><br>
+        <label for="selectCampos">En el campo</label>
+        <select name="selectCampos" id="selectCampos">            
+        </select>
+
+        <span>contiene: </span>
+        <input type="text" id="cajaBusqueda" style="width: 200px;">
+        <br><br><br>
+        <table id="tabla1">
+            <thead>                
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    <script>
+        var campos = ['Id','Username','Name','Email','City','Company'];
+        var tr = '<tr>sust</tr>';
+        var td = '<td>sust</td>';
+        var option = '<option value="sust">sust</option>';
+
+        function encabezadoTabla() {
+            let registro = "";
+            let opt = "";
+            for (let i=0; i<campos.length; i++) {
+                registro += td.replace('sust', campos[i]);
+                opt +=  option.replaceAll('sust', campos[i]);
+            }
+            registro = tr.replace('sust', registro);
+            $('#tabla1 thead').append(registro);
+            $('#selectCampos').append(opt);
+        }
+
+        function agregaRegistroTabla(usuario){            
+            let registro =  td.replace('sust', usuario.id) + 
+                            td.replace('sust', usuario.username) + 
+                            td.replace('sust', usuario.name) + 
+                            td.replace('sust', usuario.email) + 
+                            td.replace('sust', usuario.address.city) + 
+                            td.replace('sust', usuario.company.name);
+            registro = tr.replace('sust', registro);
+            $('#tabla1 tbody').append(registro);
+        }
+
+        function recorreUsuarios(usuarios) {
+            //Se limpia el body de la tabla. 
+            $('#tabla1 tbody').empty();
+            //Se recorre el arreglo de usuarios        
+            $.each(usuarios, function(){
+                agregaRegistroTabla(this);  
+            });
+            //Se coloca a todos los renglones impares un fondo gris. 
+            $('tr:odd').css('background', '#c1c1c1');
+        }
+
+        function consultaUsuarios() {
+            miUrl = 'https://jsonplaceholder.typicode.com/users';
+            $.ajax({
+                method: 'GET',
+                url: miUrl
+                //data:
+            }).done(function(data){
+                recorreUsuarios(data);
+            }).fail(function() {
+                alert('Algo salió mal');
+            }).always(function() {
+                console.log('Siempre se ejecuta....');
+            });
+        }
+
+        function filtraInformacion() {
+            //Se obtiene la columna por la cual se va a realizar la búsqueda
+            let columna = $('#selectCampos').val();
+            let texto = $('#cajaBusqueda').val();
+            //Posición que ocupa el nombre de la columna en el arreglo. 
+            let pos = campos.indexOf(columna, 0);
+            //Se recorre la tabla del DOM
+            $('#tabla1 tbody tr').each(function(){
+                let textoColumna = $(this).find('td').eq(pos).text();
+                if (textoColumna.indexOf(texto) <0 ) { // Si no tiene el texto la columna
+                    //Se elimina dicho renglon
+                    $(this).hide();
+                }else {
+                    $(this).show();
+                }
+            });
+        }
+
+        $(function(){
+            encabezadoTabla();
+            consultaUsuarios();
+            $('#cajaBusqueda').keyup(function(event){                            
+                filtraInformacion();
+            });
+        });
+    </script>
+</body>
+</html>

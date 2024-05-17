@@ -1,0 +1,81 @@
+<!-- 
+    Ejemplo de ventana modal
+  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Ejemplo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            /* Se ajusta de acuerdo a una posición */
+            z-index: 1;
+            /* Se coloca al frente de TODAS las ventanas */
+            padding-top: 100px;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            left:0;
+            top:0; 
+            /* Se activa el scroll en caso de ser necesario */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            color: #AAAAAA;
+            float: right;
+            /* Se muestra en la parte superior derecha*/
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btnModal">Ventana Modal</button>
+    <div id="ventanaModal" class="modal">
+        <div class="modal-content">
+            <span id="btnClose" class="close">&times;</span>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure similique iste ipsam molestias in
+                distinctio accusantium odi.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        $(function(){
+            $('#btnModal').click(function(){                
+                $('#ventanaModal').css('display', 'block'); 
+            }); 
+
+            $('#btnClose').click(function(){
+                $('#ventanaModal').css('display', 'none'); 
+            }); 
+            
+        }); 
+    </script>
+</body>
+
+</html>

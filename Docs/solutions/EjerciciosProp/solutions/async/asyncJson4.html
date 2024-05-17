@@ -1,0 +1,99 @@
+<!-- 
+    Referencia: http://jsonservices.com/cgi-bin/services.pl
+    https://www.themealdb.com/api/json/v1/1/search.php?s=a
+    Verificar las imagenes que se pueden crear. 
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Test Json</title>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+     <style>
+        thead {
+            font-weight: bold;
+        }
+        table, td {
+            border: 1px solid black;
+        }
+        .container {
+            padding: 25px;
+            margin-top: 25px;
+            background-color: beige;
+        }   
+        .prizes {
+            padding: 25px;
+            background-color: aqua;
+            overflow-y: scroll;
+            height: 600px;
+            width: 800px;
+        }            
+    </style>
+ </head>
+ <body>          
+    <div class="container">
+        <label for="selectCategorias">Categorías</label>
+        <select id="selectCategorias">
+            <option value="">Todas las categorias</option>
+        </select>
+        <br><br><br>
+        <div class="prizes">
+
+        </div>
+    </div>
+
+     <script>   
+        var tr = '<tr>sust</tr>';
+        var td = '<td>sust</td>';
+        var option =  '<option value="sust">sust</option>'; 
+
+        function creaCategorias() {
+            categorias = JSON.parse(localStorage.getItem('categories')); 
+            opt = ''; 
+            $.each(categorias, function(){
+                opt += option.replaceAll('sust', this); 
+            }); 
+            $('#selectCategorias').append(opt); 
+        }
+        
+        function creaCatalogos() {
+            let data = JSON.parse(localStorage.getItem('prizes'));             
+            let categories = []; 
+            let years = [];             
+            $.each(data, function(){
+                if (categories.indexOf(this.category) < 0) {
+                    categories.push(this.category); 
+                }
+                if (years.indexOf(this.year) < 0) {
+                    years.push(parseInt(this.year)); 
+                }
+            });
+            let anio_min = Math.min.apply(Math, years); 
+            let anio_max = Math.max.apply(Math, years); 
+            categories = categories.sort(); 
+            localStorage.setItem('categories', JSON.stringify(categories)); 
+            localStorage.setItem('max', anio_max); 
+            localStorage.setItem('min', anio_min); 
+        }
+
+        async function consultaAjax() {                
+            try {                
+                const response = await fetch('./prizes.json');                
+                const data = await response.json();
+                localStorage.setItem('prizes', JSON.stringify(data.prizes));                 
+                creaCatalogos(); 
+            } catch(err) {
+                alert(err); 
+                
+            }
+        }
+
+        $(function(){            
+            consultaAjax();
+            creaCategorias(); 
+        }); 
+     </script>
+ </body>
+ </html>

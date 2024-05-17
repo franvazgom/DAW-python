@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Div table</title>
+    <style>
+        body {
+            display: flex; /* Comportamiento de bloque */
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-size: 2rem;
+        }    
+        div {
+            max-width: 600px;
+        }
+        span {
+            display: inline-block;
+            background-color: #006100;
+            width: 140px;
+            height: 140px;
+        }
+        .table {
+            display: table;
+        }
+        .row {
+            display: table-row;
+        }
+        .cell {
+            display: table-cell;
+        }
+        .row, .cell {
+            padding: 10px;
+            border: 1px solid black;
+        }       
+    </style>
+</head>
+<body>
+    <div class="table">
+        <div class="row">
+            <div class="cell">Id</div>
+            <div class="cell">Producto asdf asdf as</div>
+            <div class="cell">Precio</div>
+        </div>
+        <div class="row">
+            <div class="cell">1</div>
+            <div class="cell">Manzanas</div>
+            <div class="cell">$45.96 asdf asfsafasfsaf as safsafasf asf sa fasfsafsa</div>
+        </div>
+        <div class="row">
+            <div class="cell">2</div>
+            <div class="cell">Uva</div>
+            <div class="cell">$190.0</div>
+        </div>
+    </div>
+   
+    <script>
+
+    </script>
+</body>
+</html>

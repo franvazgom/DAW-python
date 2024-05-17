@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pruebas NavBar</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        body {
+            margin: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+
+            /* Sticky */
+            position: -webkit-sticky;
+            /* Safari*/
+            position: sticky;
+            top: 0;
+        }
+
+        li {
+            float: left;
+            /* Adiocional*/
+            border-right: 2px solid #bbb;
+        }
+
+        /* Adicional */
+        li:last-child {
+            border-right: none;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .active {
+            background-color: #04AA6D;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #111;
+        }
+
+        html {
+            font-size: x-large;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="headr">
+        <h2>Antes del Menu...</h2>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum rerum unde natus praesentium magni
+            accusantium, cumque voluptas quo assumenda delectus. Inventore exercitationem, excepturi praesentium nisi
+            aspernatur pariatur voluptate optio nam.
+        </p>
+    </div>
+    <ul>
+        <li><a href="#home" class="active">Inicio</a></li>
+        <li><a href="#news">Noticias</a></li>
+        <li><a href="#contact">Contacto</a></li>
+        <li style="float: right;"><a href="#about">Acerca de</a></li>
+    </ul>
+    <section id="home" style="padding-top: 25px;">
+        <h2>NavBar Horizontal </h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus excepturi dignissimos vel nam. Nemo
+            labore quo culpa eveniet id voluptatum, velit laboriosam aliquid nam maxime! Fugiat tenetur beatae nihil
+            placeat.
+        </p>
+        <p>
+            Quisquam, culpa. Ad inventore ipsam corporis fugiat, minus quo, porro eveniet atque debitis obcaecati
+            provident impedit alias facere fugit repellendus vel architecto nisi id eos illum. Nisi, a ab! Illo?
+        </p>
+        <p>
+            Omnis quibusdam fugit numquam nulla in? Porro tempore explicabo sed corporis iusto quibusdam debitis
+            culpa consectetur, vel magni nesciunt, nemo facilis necessitatibus praesentium. Repudiandae, voluptas.
+            Voluptates amet corporis quod cupiditate.
+        </p>
+        <p>
+            Cumque, nihil vel omnis praesentium alias possimus eaque dolore cupiditate amet molestias provident,
+            quaerat explicabo magni atque culpa veritatis excepturi, consequuntur ratione veniam illo minima
+            corrupti porro accusamus? Assumenda, omnis.
+        </p>
+    </section>
+    <section id="news">
+        <br><br><br><br><br>
+        <h1>Noticias</h1>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus excepturi dignissimos vel nam. Nemo
+            labore
+            quo culpa eveniet id voluptatum, velit laboriosam aliquid nam maxime! Fugiat tenetur beatae nihil
+            placeat.
+        </p>
+        <p>
+            Quisquam, culpa. Ad inventore ipsam corporis fugiat, minus quo, porro eveniet atque debitis obcaecati
+            provident impedit alias facere fugit repellendus vel architecto nisi id eos illum. Nisi, a ab! Illo?
+        </p>
+        <p>
+            Omnis quibusdam fugit numquam nulla in? Porro tempore explicabo sed corporis iusto quibusdam debitis
+            culpa
+            consectetur, vel magni nesciunt, nemo facilis necessitatibus praesentium. Repudiandae, voluptas.
+            Voluptates
+            amet corporis quod cupiditate.
+        </p>
+        <p>
+            Cumque, nihil vel omnis praesentium alias possimus eaque dolore cupiditate amet molestias provident,
+            quaerat
+            explicabo magni atque culpa veritatis excepturi, consequuntur ratione veniam illo minima corrupti porro
+            accusamus? Assumenda, omnis.
+        </p>
+    </section>
+    <section id="contact">
+        <br><br><br><br><br>
+        <h1>Contacto</h1>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus excepturi dignissimos vel nam. Nemo
+            labore
+            quo culpa eveniet id voluptatum, velit laboriosam aliquid nam maxime! Fugiat tenetur beatae nihil
+            placeat.
+        </p>
+        <p>
+            Quisquam, culpa. Ad inventore ipsam corporis fugiat, minus quo, porro eveniet atque debitis obcaecati
+            provident impedit alias facere fugit repellendus vel architecto nisi id eos illum. Nisi, a ab! Illo?
+        </p>
+        <p>
+            Omnis quibusdam fugit numquam nulla in? Porro tempore explicabo sed corporis iusto quibusdam debitis
+            culpa
+            consectetur, vel magni nesciunt, nemo facilis necessitatibus praesentium. Repudiandae, voluptas.
+            Voluptates
+            amet corporis quod cupiditate.
+        </p>
+        <p>
+            Cumque, nihil vel omnis praesentium alias possimus eaque dolore cupiditate amet molestias provident,
+            quaerat
+            explicabo magni atque culpa veritatis excepturi, consequuntur ratione veniam illo minima corrupti porro
+            accusamus? Assumenda, omnis.
+        </p>
+    </section>
+    <section id="about">
+        <br><br><br><br><br>
+        <h1>Acerca de</h1>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus excepturi dignissimos vel nam. Nemo
+            labore
+            quo culpa eveniet id voluptatum, velit laboriosam aliquid nam maxime! Fugiat tenetur beatae nihil
+            placeat.
+        </p>
+        <p>
+            Quisquam, culpa. Ad inventore ipsam corporis fugiat, minus quo, porro eveniet atque debitis obcaecati
+            provident impedit alias facere fugit repellendus vel architecto nisi id eos illum. Nisi, a ab! Illo?
+        </p>
+        <p>
+            Omnis quibusdam fugit numquam nulla in? Porro tempore explicabo sed corporis iusto quibusdam debitis
+            culpa
+            consectetur, vel magni nesciunt, nemo facilis necessitatibus praesentium. Repudiandae, voluptas.
+            Voluptates
+            amet corporis quod cupiditate.
+        </p>
+        <p>
+            Cumque, nihil vel omnis praesentium alias possimus eaque dolore cupiditate amet molestias provident,
+            quaerat
+            explicabo magni atque culpa veritatis excepturi, consequuntur ratione veniam illo minima corrupti porro
+            accusamus? Assumenda, omnis.
+        </p>
+    </section>
+    <script>
+        $(function () {
+            $('a').click(function () {
+                //alert($(this).attr('href')); 
+                $('a').removeClass('active');
+                $(this).addClass('active');
+            });
+        }); 
+    </script>
+</body>
+
+</html>

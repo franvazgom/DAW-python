@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablas</title>
+    <style>
+        thead {color:green;}
+        tbody {color:blue;}
+        tfoot {color:red;}
+        table, tr, td {
+            border:1px solid black;
+        }
+        table {
+            border:1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Id</td>
+            <td>Producto</td>
+            <td>Existencia (KG)</td>
+            <td>Precio (Pesos)</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Uva</td>
+            <td>1,300 kg</td>
+            <td>$85.40</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Platano</td>
+            <td>5,500 kg</td>
+            <td>$19.76</td>
+        </tr>
+    </table>
+    <div style="margin-left:100px; margin-top:100px; font-size:20px; border:1px solid blue;">
+        <table style="width:80%; margin-left:50px;">
+            <thead>        
+                <tr>
+                    <td>Id</td>
+                    <td>Producto</td>
+                    <td>Existencia (KG)</td>
+                    <td>Precio (Pesos)</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Uva</td>
+                    <td>1,300 kg</td>
+                    <td>$85.40</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Platano</td>
+                    <td>5,500 kg</td>
+                    <td>$19.76</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Pera</td>
+                    <td>800 kg</td>
+                    <td>$  9.23</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>-</td>
+                    <td>Total</td>
+                    <td>7,600 Kg</td>
+                    <td>NA</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</body>
+</html>

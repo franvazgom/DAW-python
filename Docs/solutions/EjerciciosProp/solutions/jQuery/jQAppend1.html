@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jq Append</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+    </script>
+    <style>
+        thead {
+            font-weight: bold;
+            overflow-y: auto;
+            overflow-x: auto;   
+        }
+        table, td{
+            border: 1px solid black;
+            font-size: 1.2em;
+        } 
+
+        thead, tbody { display: block; }
+
+        tbody {
+            height: 500px;       
+            overflow-y: auto;    
+        }
+        table {
+            border-spacing: 0;
+        }
+        
+        .container {
+            padding: 10px;
+            margin-top: 25px;
+            background-color: beige;
+        }
+        .caja_texto {            
+            width: 250px;                        
+        }
+        button, .caja_texto {
+            font-size: 1.5em; 
+            margin-top: 25px;
+            margin-right: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input id="name" class="caja_texto" type="text" placeholder="Nombre">
+        <input id="apPaterno" class="caja_texto" type="text" placeholder="Apellido paterno">
+        <input id="apmaterno" class="caja_texto" type="text" placeholder="Apellido materno">
+        <br><br>
+        <input id="email" class="caja_texto" type="email" placeholder="Correo electrónico" style="width:350px;">
+        <button id="btnAdd"> Agregar registro >> </button>
+        <br><br><br>
+        <table id="tabla1">
+            <thead>
+                <tr>
+                    <td>id</td>
+                    <td>Nombre</td>
+                    <td>Apellido Paterno</td>
+                    <td>Apellido Materno</td>
+                    <td>Email</td>
+                </tr>
+            </thead>
+            <tbody>                
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        var contador = 1; 
+        function agregaRegistro() {
+            let tr = '<tr>sust</tr>'; 
+            let td = '<td>sust</td>'; 
+            let row =   td.replace('sust', String(contador)) + 
+                        td.replace('sust', $('#name').val()) + 
+                        td.replace('sust', $('#apPaterno').val()) + 
+                        td.replace('sust', $('#apmaterno').val()) + 
+                        td.replace('sust', $('#email').val()); 
+            row = tr.replace('sust', row); 
+            $('#tabla1 tbody').append(row); 
+            contador ++; 
+        }
+        
+
+        $(function(){
+            contador = 1; 
+            $('#btnAdd').click(function(){
+                agregaRegistro(); 
+            });             
+        }); 
+    </script>
+</body>
+</html>

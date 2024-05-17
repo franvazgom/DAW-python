@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery 1</title>
+    <style>
+        thead {
+            font-weight: bold;
+        }
+
+        table,
+        td {
+            border: 1px solid black;
+        }    
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+    </script>
+</head>
+<body>
+    <table id="tabla1">
+        <thead>
+            <tr>
+                <td>Nombre</td>
+                <td>Apellido Paterno</td>
+                <td>Apellido Materno</td>
+                <td>Edad</td>
+            </tr>
+        </thead>
+        <Tbody>
+            <tr>
+                <td>Francisco</td>
+                <td>Vázquez</td>
+                <td>Gómez</td>
+                <td>46</td>
+            </tr>
+            <tr>
+                <td>Juliana</td>
+                <td>Vázquez</td>
+                <td>Salcedo</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Natalia</td>
+                <td>Vázquez</td>
+                <td>Salcedo</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Marina</td>
+                <td>Salcedo</td>
+                <td>Fernández</td>
+                <td>46</td>
+            </tr>
+            <tr>
+                <td>Julia</td>
+                <td>Gómez</td>
+                <td>Germán</td>
+                <td>67</td>
+            </tr>
+        </Tbody>
+    </table>
+    <br><br>
+    <button id="btn1">Cambia formato tabla</button>
+    <br><br>
+    <table>
+        <thead>
+            <tr>
+                <td>T1</td>
+                <td>T2</td>
+                <td>T3</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        $(function() {
+            $('#btn1').click(function(){
+                //$("tr:odd").css('background', '#c1c1c1');
+                //$("tr:even").css('background', '#c1c1c1');
+                $("#tabla1 tr:odd").css('background', '#c1c1c1');
+            });
+        });
+    </script>
+</body>
+</html>

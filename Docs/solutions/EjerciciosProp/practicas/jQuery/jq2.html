@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J Query 2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <p id="parrafo1">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error sint soluta ipsum nam quas aspernatur facere
+        quos exercitationem nisi repudiandae vel, eos amet tempore, quam adipisci reprehenderit beatae nihil pariatur!
+        Cum voluptas ea eaque facere consequatur sint labore illo ad quis quidem fuga cumque, ipsa alias eius dolorem
+        nulla dolor culpa illum tempora corporis natus tenetur? Possimus ducimus id dignissimos.
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita ipsum suscipit aspernatur tempore soluta
+        possimus, molestias ipsa adipisci, delectus maiores eveniet officia ad eos, porro animi dicta exercitationem
+        temporibus ut!
+    </p>
+    <script>
+        $(function () {
+            $('#parrafo1').mouseover(function () {
+                $(this).hide(2000);
+            });
+            $('#parrafo1').mouseleave(function () {
+                $(this).show(2000);
+            });
+        });
+    </script>
+</body>
+</html>

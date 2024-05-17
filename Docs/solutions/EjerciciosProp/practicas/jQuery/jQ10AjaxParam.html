@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery ajax parametros</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    
+    
+
+    <script>
+        function recorrePremios(premios){
+            $.each(premios, function(){
+                //console.log(this.year, this.category);
+                let premiados = this.laureates;
+                $.each(premiados, function(){
+                    console.log(this.firstname, this.surname);
+                });
+            });
+        }
+
+        function consultaNobel() {
+            miUrl = 'https://api.nobelprize.org/v1/prize.json';
+            $.ajax({
+                method: 'GET',
+                url: miUrl,
+                data:{'category':'chemistry'}
+                //data:{'category':'chemistry', 'year':'1930', 'yearto':'2021'}
+            }).done(function(data){
+                console.log(data);
+                recorrePremios(data.prizes);
+            }).fail(function() {
+                alert('Algo salió mal');
+            }).always(function() {
+                console.log('Siempre se ejecuta....');
+            });
+        }
+
+        $(function(){
+            consultaNobel();
+        });
+
+    </script>
+</body>
+</html>

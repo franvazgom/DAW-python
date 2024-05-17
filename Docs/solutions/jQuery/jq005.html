@@ -28,7 +28,7 @@
     <button id='btn_1'>Obtener valor</button>
     <br><br><br>
     <div id='div_1'>
-        <p id='p_1' class='color_rojo fondo_azul'>
+        <p id='p_1' class='color_rojo'>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum in corporis minus obcaecati soluta sapiente, quasi aliquam possimus distinctio, molestias adipisci assumenda. At, temporibus dignissimos. Accusantium iusto ullam quas expedita.
         </p>
         <br><br><br>
@@ -41,6 +41,7 @@
     <script>
         $(function(){
             $('#btn_1').click(function(){
+                console.log("b1")
                 let valor = $('#nombre').val(); 
                 $('#oculto').val('12345678'); 
                 alert(valor + $('#oculto').val() ); 
@@ -48,8 +49,8 @@
             $('#btn_2').click(function(){
                 //$('#p_1').after('<p> Un final feliz!! </p>'); 
                 //$('#div_1').empty(); 
-                $('#p_1').addClass('fondo_azul'); 
-                //$('#p_1').removeClass('color_rojo'); 
+                //$('#p_1').addClass('fondo_azul'); 
+                $('#p_1').removeClass('color_rojo'); 
             }); 
         }); 
     </script>

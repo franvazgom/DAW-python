@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test JQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+    </script>
+    <style>
+        .rojo {
+            color: red;
+            background-color: aqua;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="rojo">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam delectus consectetur aliquam quibusdam,
+        distinctio vel et magni sed exercitationem itaque ipsam, inventore sit nobis doloremque ullam unde commodi
+        necessitatibus a.
+    </p>
+    <br><br><br>
+    <button id="btn1">Oculta Parrafo</button>
+
+    <script>
+        //DOM Creado
+        $(function () {
+            //alert('Documento creado');
+            // $('#btn1').click(function(){
+            //     $('.rojo').hide(2000); 
+            // });
+            $('#btn1').click(function(){
+                console.log($('#btn1').text()); 
+                if ($('#btn1').text() == 'Oculta Parrafo') {
+                    $('.rojo').hide(2000);
+                    $('#btn1').text('Muestra Parrafo');
+                }
+                else {
+                    $('.rojo').show(2000);
+                    $('#btn1').text('Oculta Parrafo');
+                }
+            }); 
+        }); 
+    </script>
+</body>
+
+</html>

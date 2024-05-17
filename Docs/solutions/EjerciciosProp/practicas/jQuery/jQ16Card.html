@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Ejemplo</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .card {
+            border-radius: 10px;            
+            margin-right: 25px;
+            margin-bottom: 25px;
+
+            box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
+            transition: 2s;
+
+            max-width: 20%;
+        }
+
+        .card:hover {
+            box-shadow: 0 2px 20px 0 rgba(247, 30, 30, 0.7);
+        }
+
+        .bodyCard {
+            padding: 3px 16px;
+            background-color: coral;
+            color: aliceblue;
+        }
+
+        .main {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        @media(max-width:1024px) {
+            .card {
+                flex: 25%;
+                max-width: 100%;
+            }
+        }
+
+        @media(max-width:800px) {
+            .card {
+                flex: 30%;
+                max-width: 100%;
+            }
+        }
+
+        @media(max-width:600px) {
+            .card {
+                flex: 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Tarjetas</h1>
+    <div class="main">
+        <div class="card">
+            <img src="https://source.unsplash.com/random/200x200" alt="" style="width: 100%;">
+            <div class="bodyCard">
+                <h3><b>Titulo de la tarjeta 1</b></h3>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium, voluptates? Assumenda magnam
+                    fugiat reiciendis temporibus a quaerat perferendis ipsa velit? Nisi sequi voluptatum exercitationem
+                    nam officiis suscipit ipsam, cumque accusamus!
+                </p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://source.unsplash.com/random/201x201" alt="" style="width: 100%;">
+            <div class="bodyCard">
+                <h3><b>Titulo de la tarjeta 2</b></h3>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium, voluptates? Assumenda magnam
+                    fugiat reiciendis temporibus a quaerat perferendis ipsa velit? Nisi sequi voluptatum exercitationem
+                    nam officiis suscipit ipsam, cumque accusamus!
+                </p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://source.unsplash.com/random/202x201" alt="" style="width: 100%;">
+            <div class="bodyCard">
+                <h3><b>Titulo de la tarjeta 3</b></h3>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium, voluptates? Assumenda magnam
+                    fugiat reiciendis temporibus a quaerat perferendis ipsa velit? Nisi sequi voluptatum exercitationem
+                    nam officiis suscipit ipsam, cumque accusamus!
+                </p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://source.unsplash.com/random/202x202" alt="" style="width: 100%;">
+            <div class="bodyCard">
+                <h3><b>Titulo de la tarjeta 4</b></h3>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium, voluptates? Assumenda magnam
+                    fugiat reiciendis temporibus a quaerat perferendis ipsa velit? Nisi sequi voluptatum exercitationem
+                    nam officiis suscipit ipsam, cumque accusamus!
+                </p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://source.unsplash.com/random/199x199" alt="" style="width: 100%;">
+            <div class="bodyCard">
+                <h3><b>Titulo de la tarjeta 5</b></h3>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium, voluptates? Assumenda magnam
+                    fugiat reiciendis temporibus a quaerat perferendis ipsa velit? Nisi sequi voluptatum exercitationem
+                    nam officiis suscipit ipsam, cumque accusamus!
+                </p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://source.unsplash.com/random/199x200" alt="" style="width: 100%;">
+            <div class="bodyCard">
+                <h3><b>Titulo de la tarjeta 6</b></h3>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium, voluptates? Assumenda magnam
+                    fugiat reiciendis temporibus a quaerat perferendis ipsa velit? Nisi sequi voluptatum exercitationem
+                    nam officiis suscipit ipsam, cumque accusamus!
+                </p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://source.unsplash.com/random/199x201" alt="" style="width: 100%;">
+            <div class="bodyCard">
+                <h3><b>Titulo de la tarjeta 7</b></h3>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium, voluptates? Assumenda magnam
+                    fugiat reiciendis temporibus a quaerat perferendis ipsa velit? Nisi sequi voluptatum exercitationem
+                    nam officiis suscipit ipsam, cumque accusamus!
+                </p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://source.unsplash.com/random/203x201" alt="" style="width: 100%;">
+            <div class="bodyCard">
+                <h3><b>Titulo de la tarjeta 8</b></h3>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium, voluptates? Assumenda magnam
+                    fugiat reiciendis temporibus a quaerat perferendis ipsa velit? Nisi sequi voluptatum exercitationem
+                    nam officiis suscipit ipsam, cumque accusamus!
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

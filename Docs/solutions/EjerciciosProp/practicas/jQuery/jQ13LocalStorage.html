@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage Ejemplo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <button id="btnConsulta">Consulta arhivo Json</button>
+
+    <script>
+
+        function creaCatalogos() {
+            //Convertir un String almacenado en el localStora a JSON
+            let data = JSON.parse(localStorage.getItem('prizes'));
+            let categorias = [];
+            let anios = [];
+
+            $.each(data, function(){
+                if (categorias.indexOf(this.category) < 0) {
+                    categorias.push(this.category);
+                }
+                if (anios.indexOf(parseInt(this.year))<0) {
+                    anios.push(parseInt(this.year));
+                }
+            });
+            // console.log(categorias);
+            // console.log(anios);
+            let anio_min = Math.min.apply(Math, anios);
+            let anio_max = Math.max.apply(Math, anios);
+            categorias = categorias.sort();
+            // Almacenar los datos en el localStorage
+            localStorage.setItem('categorias', JSON.stringify(categorias));
+            localStorage.setItem('max', anio_max);
+            localStorage.setItem('min', anio_min);
+        }
+
+        async function consultaJson(){
+            try {
+                const response = await fetch('prizes.json');                
+                const data = await response.json();
+                console.log(data);
+                //Convierte de JSON a String
+                localStorage.setItem('prizes', JSON.stringify(data.prizes));
+            } catch(err) {
+                alert(err);
+            }
+        }
+
+        $(function(){
+            $('#btnConsulta').click(function(){
+                consultaJson();
+                creaCatalogos();
+            });
+        });
+
+    </script>
+</body>
+</html>

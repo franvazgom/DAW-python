@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitio basado en columnas (Responsivo)</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .row::after {
+            content: "";
+            clear:both;
+            display:table;
+        }
+        /* Todas las clases que tengan el nombre col-....  */
+        [class*="col-"] {
+            float:left;
+            padding: 15px;
+            /* Resolución de movil */
+            width: 100%;
+        }
+        .html {
+            font-family: "Lucida Sans";
+        }
+        .header {
+            background-color: #9933cc;
+            color:#ffffff;
+            padding: 15px;
+            text-align: center;
+        }
+        .menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        .menu li {
+            padding: 8px;
+            margin-bottom: 7px;
+            background-color: #33b5e5;
+            color: #ffffff;
+        }
+        .menu li:hover {
+            background-color: #0099cc;
+            box-shadow: 0 2px 20px 0 rgba(46, 38, 216, 0.7);
+        }
+        .right {
+            background-color: #33b5e5;
+            padding: 15px;
+            color: #ffffff;
+            text-align: center;
+            font-size: 14px;
+        }
+        .right:hover {
+            box-shadow: 0 2px 20px 0 rgba(46, 38, 216, 0.7);
+        }
+        .footer {
+            background-color: #0099cc;
+            color: #ffffff;
+            text-align: center;
+            font-size: 12px;
+            padding: 15px;
+        }
+
+        @media(min-width: 600px) {
+            .col-s-1 {width:8.33%;}
+            .col-s-2 {width:16.66%;}
+            .col-s-3 {width:25%;}
+            .col-s-4 {width:33.33%;}
+            .col-s-5 {width:41.66%;}
+            .col-s-6 {width:50%;}
+            .col-s-7 {width:58.33%;}
+            .col-s-8 {width:66.66%;}
+            .col-s-9 {width:75%;}
+            .col-s-10 {width:83.33%;}
+            .col-s-11 {width:91.66%;}
+            .col-s-12 {width:100%;}
+        }
+        @media(min-width: 768px) {
+            .col-1 {width:8.33%;}
+            .col-2 {width:16.66%;}
+            .col-3 {width:25%;}
+            .col-4 {width:33.33%;}
+            .col-5 {width:41.66%;}
+            .col-6 {width:50%;}
+            .col-7 {width:58.33%;}
+            .col-8 {width:66.66%;}
+            .col-9 {width:75%;}
+            .col-10 {width:83.33%;}
+            .col-11 {width:91.66%;}
+            .col-12 {width:100%;}
+        }
+
+        @media (max-width:600px) {
+            .col-s-12 {
+                display: none;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>México!!!!</h1>
+    </div>
+    <div class="row">
+        <div class="col-3 col-s-3 menu">
+            <ul>
+                <li>Vuelo</li>
+                <li>Ciudad</li>
+                <li>Vida en la ciudad</li>
+                <li>Comida</li>
+            </ul>
+        </div>
+        <div class="col-6 col-s-9" style="text-align: justify;">
+            <h1>La ciudad</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos tempore in atque accusamus mollitia. Ad aut rerum impedit cumque eos, exercitationem unde voluptates reiciendis perspiciatis porro eveniet omnis dolorum accusantium.                
+            </p>
+            <p>
+                Tempora aperiam dolore, reiciendis veritatis autem obcaecati quisquam maiores deserunt, enim vitae fugiat. Deserunt quas nihil modi sed esse corporis quaerat aliquid cumque mollitia, dolores nulla magni voluptas sit laborum.
+            </p>
+        </div>
+        <div class="col-3 col-s-12 menu">
+            <div class="right">
+                <h2>¿Qué?</h2>
+                <p>México es Tempora aperiam dolore, reiciendis</p>
+                <h2>¿Dónde?</h2>
+                <p>adipisicing elit. Dignissimos tempore</p>
+                <h2>¿Cómo?</h2>
+                <p>quisquam maiores deserunt, enim</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus esse nostrum dolores consequuntur, doloribus eum aliquid harum voluptas eligendi, impedit explicabo dolore, quisquam iusto exercitationem eos? Quas suscipit et eveniet!
+            Quasi earum, error aliquam quos autem dignissimos dicta architecto quaerat repellat velit quis recusandae a officia. Fuga et aspernatur quia debitis eius a natus architecto corporis quibusdam, veritatis laborum reiciendis.
+        </p>
+    </div>
+</body>
+</html>

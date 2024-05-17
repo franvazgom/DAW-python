@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablas con Divs..</title>
+    <style>
+        body {
+            /* Comportamiento de bloque */
+            display: flex; 
+            align-items: center;
+            justify-content: center;
+            height: 500px;
+            font-size: 1.5rem;
+        }
+        div {
+            max-width: 600px;
+        }        
+        .table {
+            display: table;
+        }
+        .row {
+            display: table-row;
+        }
+        .cell {
+            display: table-cell;
+        }
+        .row, .cell {
+            padding: 10px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="table">
+        <div class="row">
+            <div class="cell">Id</div>
+            <div class="cell">Producto</div>
+            <div class="cell">Precio</div>
+        </div>
+        <div class="row">
+            <div class="cell">1</div>
+            <div class="cell">Manazana</div>
+            <div class="cell">$45.00</div>
+        </div>
+        <div class="row">
+            <div class="cell">2</div>
+            <div class="cell">Uva</div>
+            <div class="cell">$190.0</div>
+        </div>
+    </div>
+</body>
+</html>

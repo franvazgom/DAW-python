@@ -1,0 +1,49 @@
+<!-- 
+    1.- Realiza una conexión AJAX
+    2.- Muestra el uso de $.each
+    3.- Muestra la información de cada uno de los campos mediante el operador "."
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax demo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+    </script>
+</head>
+<body>
+    <button id="btn1">Realizar consulta</button>
+    <script>
+        function recorreUsuario(data) {            
+            $.each(data, function(){                
+                console.log(this); 
+            });
+        }
+
+        function consultaUsuarios() {
+            //my_url = 'https://jsonplaceholder.typicode.com/users'
+            my_url = 'https://api.nobelprize.org/v1/prizze.json'; 
+            $.ajax({
+                method: "GET",
+                url: my_url,
+                data: {'category':'physics', 'year':'2000', 'yearto':'2010'}
+            }).done(function(data) {
+                recorreUsuario(data);
+                return data; 
+            }).fail(function(err) {
+                alert("Algo salió mal");
+                console.log(err.status, err.statusText); 
+            }).always(function() {
+                // alert("Siempre se ejecuta")
+            });
+        }
+        $(function(){
+            $('#btn1').click(function(){
+                consultaUsuarios();                
+            });
+        });
+    </script>
+</body>
+</html>

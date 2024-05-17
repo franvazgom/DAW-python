@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Flex container</title>
+    <style>
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-content: center;
+            background-color: dodgerblue;
+        }
+        .flex-container > div {
+            background-color: #f1f1f1;
+            margin: 10px;
+            padding: 20px;
+            font-size: 50px;
+        }
+        .flex-container2 {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-content: center;
+            background-color: dodgerblue;
+        }
+        .flex-container2 > div{ 
+            background-color: #f1f1f1;
+            margin: 10px;
+            padding: 20px;
+            font-size: 50px;
+            padding-top: 50px;
+            width:100px;
+            text-align: center;
+        }
+        .flex-container3 {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;       
+            background-color: dodgerblue;
+            height: 350px;
+        }
+        .flex-container3 > div{ 
+            background-color: #f1f1f1;
+            margin: 10px;
+            padding: 20px;
+            font-size: 50px;
+            padding-top: 50px;
+            width:100px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+        <div>Texto 1</div>
+        <div>Texto 2</div>
+        <div>Texto 3</div>
+        <div>Texto 4</div>
+        <div>Texto 5</div>
+    </div>
+    <br><br>
+    <div class="flex-container2">
+        <div >1</div>
+        <div style="flex-grow: 1">2</div>
+        <div style="flex-shrink: 0"> 3</div>
+        <div style="flex-basis: 200px;"> 4 </div>
+        <div> 5 </div>        
+    </div>
+    <br><br>
+    <hr>
+    <div class="flex-container3">
+        <div>1</div>
+        <div style="align-self:flex-start;">2</div>
+        <div style="align-self:flex-end;">3</div>
+        <div>4</div>
+    </div>
+    <br><br><br>
+    <div class="flex-container">
+        <div style="order: 3">1</div>
+        <div style="order: 1">2</div>
+        <div style="order: 4">3</div>
+        <div style="order: 2">4</div>
+    </div>
+    <br><br><br>
+    <hr>
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div style="flex-basis: 200px;">3</div>
+        <div>4</div>
+        <div>5</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async test</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    
+    <script>
+        async function consultaPremios() {
+            const url = 'https://api.nobelprize.org/v1/prize.json?csategory=physics&year=2000';
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    console.log('response....');
+                    const mensaje = String(response.status);
+                    throw new Error(mensaje);
+                }
+                const data = await response.json();
+                console.log(data);
+            } catch(err) {
+                alert(err);
+            }
+        }
+
+        $(function(){
+            consultaPremios();
+        });
+
+    </script>
+</body>
+</html>

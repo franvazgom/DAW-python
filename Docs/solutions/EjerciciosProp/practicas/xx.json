@@ -1,0 +1,32 @@
+{
+    "prizes": [
+        {
+            "year": "2000",
+            "category": "physics",
+            "overallMotivation": "\"for basic work on information and communication technology\"",
+            "laureates": [
+                {
+                    "id": "726",
+                    "firstname": "Zhores",
+                    "surname": "Alferov",
+                    "motivation": "\"for developing semiconductor heterostructures used in high-speed- and opto-electronics\"",
+                    "share": "4"
+                },
+                {
+                    "id": "727",
+                    "firstname": "Herbert",
+                    "surname": "Kroemer",
+                    "motivation": "\"for developing semiconductor heterostructures used in high-speed- and opto-electronics\"",
+                    "share": "4"
+                },
+                {
+                    "id": "728",
+                    "firstname": "Jack",
+                    "surname": "Kilby",
+                    "motivation": "\"for his part in the invention of the integrated circuit\"",
+                    "share": "2"
+                }
+            ]
+        }
+    ]
+}
