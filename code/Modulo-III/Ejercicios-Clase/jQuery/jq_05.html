@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery Efectos</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" 
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" 
+        crossorigin="anonymous">
+    </script>
+</head>
+<body>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum corporis maxime perspiciatis excepturi! Enim possimus iste illum cupiditate sit provident, voluptatibus aut, facilis omnis amet obcaecati nesciunt laboriosam iure nulla?
+    </p>
+    <p>
+        parrafo2
+    </p>
+    <button id="btn1">Muestra div</button>
+    <div id="div1" style="display: none;">
+        <h1 id="p1">Parrafo oculto</h1>
+    </div>
+    <br><br><br>
+    <button id="btn2">Anima</button>
+    <button id="btn3">Desanima</button>
+    <br><br><br><br><br><br>
+    <div id="div2" style="background: red; 
+            height: 100px; width: 100px; 
+            position: absolute;">
+
+    </div>
+    <script>
+        //$(function(){
+        $(document).ready(function(){
+            $('#btn1').click(cambiaEstado);
+            $('#btn2').click(function(){
+                $('#div2').animate({
+                    left: "250px",
+                    opacity: '0.5',
+                    height: '200px',
+                    width: '200px'
+                });
+            });
+            $('#btn3').click(function(){
+                $('#div2').animate({
+                    left: "10px",
+                    opacity: '1',
+                    height: '100px',
+                    width: '100px'
+                });
+            });
+        });
+        function cambiaEstado() {
+            console.log("Entra a cambiaEstado");
+            if ($('#btn1').text() == "Muestra div") {
+                $('#btn1').text("Oculta div");
+                $('#div1').fadeIn("slow");
+            }else {
+                $('#btn1').text("Muestra div");
+                $('#div1').fadeOut("slow");
+            }
+        }
+        function alerta() {
+            alert("Mensaje de alerta");
+        }
+
+    </script>
+</body>
+</html>
