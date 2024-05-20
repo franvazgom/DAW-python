@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test for each</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" 
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" 
+        crossorigin="anonymous">
+    </script>
+    <style>
+        table, th, td {
+            border: 1px solid blue; 
+        }
+    </style>
+</head>
+<body>
+    <table id="tablita">
+        <thead>
+            <tr>
+                <th>Titulo 1</th>
+                <th>Titulo 2</th>
+                <th>Titulo 3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Columna 1</td>
+                <td>Columna 2</td>
+                <td>Columna 3</td>
+            </tr>
+            <tr>
+                <td>Otra columna 1</td>
+                <td>Otra columna 2</td>
+                <td>Otra columna 3</td>
+            </tr>
+            <tr>
+                <td>Otra 1</td>
+                <td>Otra 2</td>
+                <td>Otra 3</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>        
+        $(function(){
+            cambiaFormato(); 
+            $('#tablita').find("tbody").find("tr").mouseover(function(){
+                $(this).css('background', 'yellow');
+            }); 
+            $('#tablita').find("tbody").find("tr").mouseleave(function(){
+                cambiaFormato(); 
+            }); 
+        });
+        
+        function cambiaFormato() {
+            $("#tablita tr:odd").css('background', '#c1c1c1');
+            $("#tablita tr:even").css('background', 'white');
+        }
+
+        
+    </script>
+</body>
+</html>
