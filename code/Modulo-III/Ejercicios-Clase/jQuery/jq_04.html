@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JQuery Table</title>
+    <title>JQuery Table</title>    
     <script src="https://code.jquery.com/jquery-3.7.1.js" 
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" 
         crossorigin="anonymous">
     </script>
+    <script src="./jquery_04.js" ></script>
     <style>
         table, th, td {
             border: 1px solid black;            
         }
     </style>
 </head>
-<body>    
+<body>   
+    <button id="btnP">Prueba de boton</button> 
+    <br><br>
     <table id="tablaNombres">
         <thead>
             <tr>
@@ -88,37 +91,6 @@
         Comentario
         Comentario 2
     -->
-    <script>
-        /* 
-        Comentario multilinea
-        */
-        $(function(){
-            $('#btn1').click(function(){
-                if ($(this).text() == "Cambia formato de table") {
-                    $("#tablaNombres tr:odd").css('background', '#c1c1c1');
-                    $(this).text("Elimina formato");
-                } else {
-                    $("#tablaNombres tr:odd").css('background', 'white');
-                    $(this).text("Cambia formato de table");
-                }
-            });
-            $('p').mouseenter(function(){
-                $(this).hide(1000);
-            });
-            $('p').mouseleave(function(){
-                $(this).show(1000);
-            });
-            $('#table2 tr').mouseover(function(){
-                $(this).css('background', 'yellow');
-            });
-            $('#table2 tr').mouseleave(function(){
-                $(this).css('background', 'white');
-            });
-            $("tr").dblclick(function(){
-                // $('#box1').val($(this).text());
-                $('#box1').val($(this).find("td").eq(-2).text());
-            });
-        }); 
-    </script>
+    
 </body>
 </html>
