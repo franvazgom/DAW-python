@@ -24,6 +24,37 @@
 3.3.- Agregar al final de la tabla "tablaPersonas" el renglon creado 
 */
 
+$(function(){
+    $('#agregaPersona').click(agregaRenglon);
+});
+function obtenerPersona() {
+    let apellidos = ['Aguilar', 'Basurto', 'Fernández', 'Gómez', 'Juárez', 'Méndez', 'Malinalgo'];
+    let nombres = ['Ana', 'Armando', 'Carmen', 'Daniela', 'Ernesto', 'Francisco', 'Fernanda']; 
+    let nombre = nombres[Math.round(Math.random()*(nombres.length - 1 ))];
+    let apPaterno = apellidos[Math.round(Math.random()*(apellidos.length - 1 ))];
+    let apMaterno = apellidos[Math.round(Math.random()*(apellidos.length - 1 ))];
+    let edad = Math.round(Math.random() * 50 + 15);
+    let persona = {
+        nombre:nombre,
+        apPaterno:apPaterno,
+        apMaterno:apMaterno,
+        edad:edad
+    };    
+    return persona;
+}
+
+function agregaRenglon() {
+    let persona = obtenerPersona();    
+    let plantilla = "<tr><td>nombre</td><td>apPaterno</td><td>apMaterno</td><td>edad</td></tr>";
+    let renglon = plantilla.replace('nombre', persona.nombre);
+    renglon = renglon.replace('apPaterno', persona.apPaterno);
+    renglon = renglon.replace('apMaterno', persona.apMaterno);
+    renglon = renglon.replace('edad', persona.edad);
+    // $('#tablaPersonas tbody').append(renglon);
+    $('#tablaPersonas').find('tbody').append(renglon);
+
+}
+
 
 /*
 ********************************************************************

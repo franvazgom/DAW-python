@@ -38,6 +38,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" 
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" 
+        crossorigin="anonymous">
+    </script>
 </head>
 <body>
     <h2>Por favor llene los datos que se solicitan:</h2>
@@ -54,6 +58,28 @@
     <br /><br />
     <label for="txtRFC">RFC: </label>
     <input type="text" id="txtRFC" disabled />
+
+    <script>
+        $(function(){
+            $('#btnRFC').click(obtenerRFC);
+        });
+
+        function obtenerRFC() {
+            let nombre = $('#txtNom').val();
+            console.log(nombre);
+            console.log(nombre.length);
+            if (nombre.length == 0){
+                alert("El campo nombre está vacío");
+            }
+            console.log(nombre.substring(0,2));
+            console.log(nombre[0]);
+            console.log(nombre[1]);
+            let res = nombre[0] + nombre[1] + "-" + "XXX";
+            res = res.toUpperCase();
+            $('#txtRFC').val(res);            
+        }
+    </script>
+
 </body>
 </html>
 </body>

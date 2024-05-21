@@ -1,14 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Tarea 01</title>    
+    <title>Tarea 02</title>    
     <!-- Estilos para table, th y td, borde 1px negro -->
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
     <!-- Script para incluir CDN de JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" 
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" 
+        crossorigin="anonymous">
+    </script>
     <!-- Incluir js tarea_02.js -->
+    <script src="./tarea_02.js"></script>
+    
 </head>
 <body>
-    <h1>Tarea 01</h1>
+    <h1>Tarea 02</h1>
     <!-- Botón: agregaPersona para agregar persona -->
+    <button id="agregaPersona">Agregar Persona</button>
     <!-- Tabla: tablaPersonas Columnas: Nombre / Ap Paterno / Ap Materno / Edad-->
+    <table id="tablaPersonas">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Ap Paterno</th>
+                <th>Ap Materno</th>
+                <th>Edad</th>
+            </tr>            
+        </thead>
+        <tbody>            
+        </tbody>
+    </table>
+    <script>
+    </script>
 </body>
 </html>
