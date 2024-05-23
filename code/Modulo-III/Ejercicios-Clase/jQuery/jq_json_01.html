@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba JSON</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" 
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" 
+        crossorigin="anonymous">
+    </script>
+</head>
+<body>
+    <h1>Prueba de JSON (consola)</h1>
+
+    <script>
+        let j1 = '{"nombre":"Hugo", "edad":30, "ciudad":"México"}';
+        let j2 = '{"nombre":"Juliana", "edad":7, "ciudad":"Mérida"}';
+        let objJson1 = $.parseJSON(j1);
+        console.log(objJson1.nombre);
+        console.log(objJson1.edad);
+        console.log(objJson1.ciudad);
+        
+        let j3 = '["cadena1", "cadena2", "cadena3"]';
+        let objJson3 = $.parseJSON(j3);
+        console.log(objJson3[1]);
+
+        let j4 = '[' + j1 + ',' + j2 + ']';
+        let objJson4 = $.parseJSON(j4);
+        console.log(objJson4[0].edad);
+
+        let elem1 = '"personas":' + j4;
+        let elem2 = '"strings":' + j3; 
+        let j5 = '{' + elem1 + ',' + elem2 + '}';
+        let objJson5 = $.parseJSON(j5);
+        console.log(objJson5.personas[1].nombre);
+
+
+
+    </script>
+</body>
+</html>

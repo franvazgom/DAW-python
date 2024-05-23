@@ -26,6 +26,8 @@
 
 $(function(){
     $('#agregaPersona').click(agregaRenglon);
+    $('#inputTexto').keyup(filtraInformacion2);
+
 });
 function obtenerPersona() {
     let apellidos = ['Aguilar', 'Basurto', 'Fernández', 'Gómez', 'Juárez', 'Méndez', 'Malinalgo'];
@@ -72,6 +74,34 @@ Filtrar los datos que aparecen en la tabla, mediante lo que se tenga en un campo
 2.4.- Puede hacer uso de hide y show para filtrar la información  
 3.- Sobrecargar la funcionalidad del evento "keyup", invocar a la función filtraInformacion
 */
+
+function filtraInformacion() {
+    let textoBuscado = $('#inputTexto').val().toUpperCase();
+    $('#tablaPersonas tbody tr').each(function(){ 
+        let renglon = $(this).text().toUpperCase();
+        if (renglon.indexOf(textoBuscado) < 0) {
+            $(this).hide();
+        }else {
+            $(this).show();
+        }
+     });
+}
+
+
+function filtraInformacion2() {
+    let textoBuscado = $('#inputTexto').val().toUpperCase();
+    var datos = $('#tablaPersonas tbody tr');
+    for(let i=0; i<datos.length; i++) {  
+        let renglon = $(datos[i]).text().toUpperCase();
+        if (renglon.indexOf(textoBuscado) < 0) {
+            $(datos[i]).hide();
+        }else {
+            $(datos[i]).show();
+        }        
+    }
+    console.log(renglon);
+}
+
 
 /*
 ********************************************************************
