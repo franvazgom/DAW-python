@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Ejemplo 2</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" 
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" 
+        crossorigin="anonymous">
+    </script>
+</head>
+<body>
+    <button id='btnAjax'>Consulta AJAX</button>
+
+    <script>
+
+        $(function(){
+            $('#btnAjax').click(obtieneInformacion);
+        });
+
+        function obtieneInformacion() {
+            var datos = {
+                nombre:"Francisco",
+                job:"Profesor"
+            }; 
+            
+
+            $.ajax({
+                url: 'https://reqres.in/api/users',
+                type: 'POST',
+                contentType: 'application/json', // Tipo de contenido para el servidor (ENVIAR)
+                data: JSON.stringify(datos), // Convertir el objeto JSON a una cadena JSON
+                dataType: 'json', // Tipo de contenido que se recibe desde el servidor (RECIBIR)
+                success: function(data) {
+                    console.log(data);
+                },
+                error: function(xhr, status, error) {
+                    console.log(status);
+                    console.log(error);                    
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

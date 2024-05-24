@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Ejemplo</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" 
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" 
+        crossorigin="anonymous">
+    </script>
+</head>
+<body>
+    <button id='btnAjax'>Consulta AJAX</button>
+
+    <script>
+
+        $(function(){
+            $('#btnAjax').click(obtienePremiosNobel);
+        });
+
+        function obtienePremiosNobel() {
+            $.ajax({
+                url: 'https://api.nobelprize.org/2.1/laureates',
+                type: 'GET',
+                dataType: 'json',
+                success: function(data) {
+                    // console.log(data);
+                    procesaInformacion(data);
+                },
+                error: function(xhr, status, error) {
+                    console.log(status);
+                    console.log(error);                    
+                }
+            });
+        }
+
+        function procesaInformacion(datos) {
+            arreglo = datos.laureates;
+            //Full Name / Gender / Year birth / Category / Date Awarded / Prize Amount
+            console.log(arreglo);
+            // for (let i=0; i<arreglo.length; i++) {
+            //     let id = arreglo[i].id;
+            //     let name = arreglo[i].fullName.en;
+            //     console.log(id + " - " + name);
+            // }
+            $.each(arreglo, function(index, elemento){
+                console.log(elemento.fullName.en, 
+                    elemento.gender, elemento.birth.date, elemento.nobelPrizes[0].awardYear, 
+                    elemento.nobelPrizes[0].category.en, elemento.nobelPrizes[0].prizeAmount
+                );
+            });
+        }
+    </script>
+
+</body>
+</html>
