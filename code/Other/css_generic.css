@@ -1,0 +1,7 @@
+
+#container__ {
+    width: 350px;
+    height: 200px;
+    overflow: auto; /* scroll */
+    border: 1px solid #ccc;     
+  }
