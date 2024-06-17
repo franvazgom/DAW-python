@@ -96,14 +96,12 @@ Function:getDataFiltered
 Return an array with the text content of buttons that are selected 
 */
 function getDataFiltered(containerId) {
-    const btns = document.getElementById(containerId).querySelectorAll('button');
     let result = [];
     const typeBtn = getTypeBtns(containerId);
     const clNameSelected = eval("btnClassName." + typeBtn + ".selected");
-    btns.forEach((btn, index) => {        
-        if (btn.className == clNameSelected) {
-            result.push(btn.textContent);
-        }
+    const btns = document.getElementById(containerId).getElementsByClassName(clNameSelected);
+    Array.from(btns).forEach((btn, index) => {
+        result.push(btn.textContent);
     });
     return result;
 }
@@ -130,6 +128,20 @@ function getTypeBtn(btn) {
     }
     console.error("getTypeBtn: typeBtns not found, className:", className);
     return null;
+}
+
+/*
+Function:filterContainer
+Set selected class to buttons which in btnsSelected list.  
+*/
+function filterContainer(containerId, btnsSelected){
+    const btns = document.getElementById(containerId).querySelectorAll('button');
+    const typeBtn = getTypeBtns(containerId);
+    const clNameSelected = eval("btnClassName." + typeBtn + ".selected");
+    const clNameNotSelected = eval("btnClassName." + typeBtn + ".notSelected");
+    btns.forEach((btn, index) => { 
+        btn.className = btnsSelected.includes(btn.textContent)? clNameSelected:clNameNotSelected;
+    });
 }
 
 /* 
