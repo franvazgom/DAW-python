@@ -18,8 +18,11 @@
   <!-- JQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
   </script>
-  <link rel="stylesheet" href="css/style.css" />
+  {% load static %}
+  <link rel="stylesheet" href=" {% static 'core/css/style.css' %}" />
   <title>Inicio | Francisco Vázquez</title>
+  <link rel="icon" type="image/jpg" href=" {% static 'core/img/courses.jpg' %} ">
+
 </head>
 
 <body>
@@ -35,7 +38,7 @@
       <div class="collapse navbar-collapse justify-content-end" id="navBarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" href="index.html">
+            <a class="nav-link {% if request.path == '/' %}active{% endif %} " href=" {% url "home" %} ">
               <i class="far fa-user-secret"></i> Inicio</a>
           </li>
           <li class="navbar-nav">            
@@ -43,15 +46,19 @@
               <i class="far fa-file-chart-line"></i> Proyectos</a>
           </li>          
           <li class="navbar-nav">
-            <a class="nav-link" href="contact.html">
+            <a class="nav-link {% if 'contact' in request.path %}active{% endif %} " href=" {% url "contact" %} ">
               <i class="fal fa-at"></i> Contacto</a>
+          </li>
+          <li class="navbar-nav">
+            <a class="nav-link {% if 'about' in request.path %}active{% endif %} " href=" {% url "about" %} ">
+              <i class="fal fa-user"></i> Acerca de...</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  {% block content %}{% endblock content %}
+  {% block content %}{% endblock %}
 
 
 <!-- Footer -->
