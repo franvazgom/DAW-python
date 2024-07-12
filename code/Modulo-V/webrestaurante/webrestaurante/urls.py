@@ -1,14 +1,15 @@
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.conf.urls.static import static
-from django.conf import settings
-from core import views as views_core
+from . import settings
+from core.urls import core_urlpatterns
+from blog.urls import blog_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views_core.home, name='home'),
-    path('about/', views_core.about, name='about'),
+    path('', include(core_urlpatterns)),
+    path('blog/', include(blog_urlpatterns))
 ]
 
 if settings.DEBUG:
