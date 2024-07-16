@@ -3,6 +3,7 @@ from .models import Post, Category
 
 def blog(request):
     posts = Post.objects.all()
+
     return render(request, 'blog/post_list.html', {'posts':posts})
 
 def category(request, category_id):
