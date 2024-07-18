@@ -48,14 +48,14 @@
           <li class="nav-item {% if request.path == '/about/' %}active{% endif %} px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href=" {% url 'core:about' %} ">Historia</a>
           </li>
-          <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="services.html">Servicios</a>
+          <li class="nav-item {% if request.path == '/services/' %}active{% endif %} px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href=" {% url 'services:service_list' %} ">Servicios</a>
           </li>
           <li class="nav-item {% if request.path == '/visit-us/' %}active{% endif %} px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href=" {% url "core:visit-us" %} ">Visítanos</a>
           </li>
-          <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="contact.html">Contacto</a>
+          <li class="nav-item {% if request.path == '/contact/' %}active{% endif %} px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href=" {% url "contact:contact" %} ">Contacto</a>
           </li>
           <li class="nav-item px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href=" {% url "blog:post" %} ">Blog</a>
