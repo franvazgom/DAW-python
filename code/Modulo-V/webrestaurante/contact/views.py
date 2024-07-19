@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
-from .forms import ContactForm
+from .forms import ContactForm, ContactForm2
 from django.urls import reverse_lazy
 
 def contact(request):
@@ -11,13 +11,16 @@ def contact(request):
             name = form.cleaned_data.get('name')
             email = form.cleaned_data['email']
             content = form.cleaned_data['content']
+            print("--------------------------------------------")
             print(name, email, content)
-            dominio = 'gmail.com'
-            if dominio not in email:
-                form.add_error('email', 'El dominio debe ser de Gmail')
-                return render(request, 'contact/contact.html', {'form':form})            
+            # dominio = 'gmail.com'
+            # if dominio not in email:
+            #     form.add_error('email', 'El dominio debe ser de Gmail')
+            #     return render(request, 'contact/contact.html', {'form':form})            
             # return HttpResponseRedirect('/contact/thanks/')
             return HttpResponseRedirect(reverse_lazy('contact:thanks'))
+        else:
+            print("Forumlario inválido")
     else: # Método es GET
         form = ContactForm()
     return render(request, 'contact/contact.html', {'form':form})
