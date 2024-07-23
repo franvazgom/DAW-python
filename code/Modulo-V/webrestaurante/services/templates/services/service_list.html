@@ -1,7 +1,7 @@
 {% extends "core/base.html" %}
 {% block content %}
 {% load static %}
-
+{% include "services/menu_services.html" %}
 {% for service in services %}
   <section class="page-section">  
     <div class="container">
@@ -18,9 +18,13 @@
             src=" {{service.image.url}} " alt="">
         <div class="product-item-description d-flex ml-auto">
           <div class="bg-faded p-5 rounded">
-            <p class="mb-0">
-                {{service.content|safe}}
-            </p>
+            {{service.content|safe}}
+            <br>
+            {% if request.user.is_staff %}
+              <a href=" {% url 'services:update' service.id %} ">Ver detalle</a>
+              / 
+              <a href=" {% url 'services:delete' service.id %} ">Eliminar registro</a>
+            {% endif %}
           </div>
         </div>
       </div>
