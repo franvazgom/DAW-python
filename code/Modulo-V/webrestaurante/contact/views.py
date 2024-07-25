@@ -2,9 +2,28 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from .forms import ContactForm, ContactForm2
 from django.urls import reverse_lazy
+from django.http import JsonResponse
+from django.views.decorators.http import require_http_methods, require_POST
+
+@require_POST
+def get_cities(request):
+    country = request.POST.get('country', '')
+    if country == 'México':
+        cities = ['Ciudad de México', 'Guadalajara', 'Monterrey']
+    elif country == 'USA':
+        cities = ['Nueva York', 'Los Ángeles', 'Chicago', 'Orlando']
+    elif country == 'Canada':
+        cities = ['Vancouver', 'Montreal', 'Quebec']
+    else:
+        cities = []
+    return JsonResponse({'cities':cities})
+
+@require_http_methods(['GET'])
+def get_countries(request):
+    countries = ['México', 'USA', 'Canada']
+    return JsonResponse({'countries':countries})
 
 def contact(request):
-    print(request.method)
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
