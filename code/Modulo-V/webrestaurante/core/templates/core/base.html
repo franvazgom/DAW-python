@@ -60,6 +60,18 @@
           <li class="nav-item px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href=" {% url "blog:post" %} ">Blog</a>
           </li>
+          <li class="nav-item px-lg-4">
+            {% if request.user.is_authenticated %}  
+              <span class="nav-link text-uppercase text-expanded">{{request.user.get_full_name}}</span>
+              <form id='logoutForm' method="post" action="{% url 'core:logout' %}">
+                {% csrf_token %}
+                <a class="nav-link text-uppercase text-expanded" href="JavaScript: logoutForm.submit();">Salir</a>
+              </form>
+            {% else %}
+              <a class="nav-link text-uppercase text-expanded" 
+              href="{% url 'social:begin' 'google-oauth2' %}">Acceder con Gmail</a>
+            {% endif %}            
+          </li>            
         </ul>
       </div>
     </div>

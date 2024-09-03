@@ -1,6 +1,6 @@
 
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 from django.conf.urls.static import static
 from . import settings
 from core.urls import core_urlpatterns
@@ -16,6 +16,7 @@ urlpatterns = [
     path('pages/', include(pages_urlpatterns)),
     path('services/', include(services_urlpatterns)),
     path('contact/', include(contact_urlpatterns)),
+    re_path(r'^oauth/', include('social_django.urls', namespace='social')),
 ]
 
 urlpatterns += [
