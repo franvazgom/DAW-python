@@ -1,6 +1,18 @@
-from django.forms import ModelForm, TextInput, Textarea
-from services.models import Service
+from django.forms import ModelForm, TextInput, Textarea, EmailInput
+from services.models import Service, Order
 from django_ckeditor_5.widgets import CKEditor5Widget
+
+class OrderForm(ModelForm):
+    class Meta:
+        model = Order
+        fields = ['nombre', 'direccion', 'total', 'correo']
+    
+        widgets = {
+            'nombre':TextInput(attrs={'class':'form-control', 'placeholder':'Nombre'}),
+            'direccion':TextInput(attrs={'class':'form-control', 'placeholder':'Dirección'}),
+            'correo':EmailInput(attrs={'class':'form-control', 'placeholder':'Email'}),
+            'total':TextInput(attrs={'class':'form-control', 'readonly':'readonly'}),
+        }
 
 class ServiceForm(ModelForm):
     class Meta:

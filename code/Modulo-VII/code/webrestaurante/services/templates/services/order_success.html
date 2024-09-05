@@ -1,0 +1,18 @@
+{% extends "core/base.html" %}
+{% block content %}
+{% load static %}  
+    <div class="container">              
+        <div class="row mt-2">                       
+            <div class="col-md-9 mx-auto mb-1">
+                <h1 class="text-white">Gracias por su compra!!!!</h1>
+            </div>
+        </div>    
+    </div>
+{% endblock  %}
+{% block contentJS %}
+    <script>
+        localStorage.clear();
+        cart={};
+        showBadgeCart();
+    </script>
+{% endblock contentJS %}

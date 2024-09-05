@@ -3,10 +3,48 @@
 
 <div class="container">
     <div class="row mt-2">
-        <div class="col-md-9">
-            PRUEBAS....
-        </div>
+      <div class="col-md-9">
+          <table class="table table-bordered">
+              <thead class="text-white">
+                <tr>
+                    <th>Id</th>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th>Subtotal</th>
+                </tr>
+              </thead>
+              <tbody class="text-white">
+                 {% for product in order  %}
+                    <tr>
+                        <td>{{product.id}}</td>
+                        <td>{{product.descripcion}}</td>
+                        <td style='text-align:right;'>{{product.cantidad}}</td>
+                        <td style='text-align:right;'>${{product.precio}}</td>
+                        <td style='text-align:right;'>${{product.subtotal}}</td>
+                    </tr>
+                 {% endfor %}   
+              </tbody>
+          </table>
+      </div>
     </div>
-</div>
+    <div class="row mt-2">
+      <div class="col-md-9 mx-auto mb-2">
+        <div style='text.align:right'>
+          <span class="text-white">Total = ${{total}} </span>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col-md-9 mx-auto mb-1">
+        <div id='button_submit' style='text-align:right;'>
+          <a href=" {% url 'services:order_create' %} " class="btn text-white form-btn mx-1">
+            <span class="spinner-border spinner-border-sm d-done"></span>
+            Confirmar pedido<i class="fas fa-paper-plane fa-fw"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 
 {% endblock  %}
