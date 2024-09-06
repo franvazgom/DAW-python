@@ -22,6 +22,13 @@
   {% load static %}
   <!-- Estilos -->
   <link href=" {% static 'core/css/business-casual.css' %} " rel="stylesheet">
+  <style>
+    ul.errorlist {
+      color:red; 
+    }
+    {% block contentStyle %} {% endblock  %}
+  </style>
+
 </head>
 
 <body>
@@ -65,6 +72,24 @@
               <i class="fas fa-shopping-cart"><span id='cart-badge' class="badge badge-danger">0</span></i>
             </a>
           </li>
+          {% if not request.user.is_authenticated %}
+            <li class="nav-item px-lg-4">
+              <a class="nav-link" href="{% url 'login' %}" >Acceder</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link" href="{% url 'signup' %}" >Registro</a>
+            </li>
+          {% else %}
+          <li class="nav-item">
+            <span class="nav-link">{{ user.username }}</span>
+          </li>
+            <li class="nav-item px-lg-4">              
+              <form action="{% url 'logout' %}" method= 'post' >
+                {% csrf_token %}
+                <button class="btn btn-outline-secondary btn-sm" type='submit' >Salir</button>
+              </form>
+            </li>
+          {% endif %}
         </ul>
       </div>
     </div>

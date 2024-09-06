@@ -10,6 +10,8 @@ from services.urls import services_urlpatterns
 from contact.urls import contact_urlpatterns
 
 urlpatterns = [
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('registration.urls')),
     path('admin/', admin.site.urls),
     path('', include(core_urlpatterns)),
     path('blog/', include(blog_urlpatterns)),
