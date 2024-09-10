@@ -1,9 +1,10 @@
 from django.urls import path
 from services import views
-from services.views import ServiceCreateOrder, OrderSuccess
+from services.views import ServiceCreateOrder, OrderSuccess, ServiceListView
 
 services_urlpatterns = ([
-    path('', views.service_list, name='service_list'),    
+    # path('', views.service_list, name='service_list'),    
+    path('', ServiceListView.as_view(), name='service_list'),    
     path('create/', views.create, name='create'), 
     path('update/<int:service_id>', views.update, name='update'), 
     path('delete/<int:service_id>', views.delete, name='delete'), 

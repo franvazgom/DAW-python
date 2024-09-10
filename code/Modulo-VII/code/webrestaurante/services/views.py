@@ -1,10 +1,18 @@
 from django.shortcuts import render, HttpResponseRedirect
 from services.models import Service
 from django.views.generic.edit import CreateView
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView
 from .forms import ServiceForm, OrderForm
 from django.contrib.admin.views.decorators import staff_member_required
 from django.urls import reverse_lazy
+
+class ServiceListView(ListView):
+    model = Service
+    paginate_by = 2
+
+# def service_list(request):
+#     services = Service.objects.all()
+#     return render(request, 'services/service_list.html', {'services':services})
 
 class OrderSuccess(TemplateView):
     template_name = 'services/order_success.html'
@@ -48,10 +56,6 @@ def order_request(request):
         request.session['total_order'] = total
         request.session['detail_order'] = order
     return render(request, 'services/detail_order.html', {'order':order, 'total':total})
-
-def service_list(request):
-    services = Service.objects.all()
-    return render(request, 'services/service_list.html', {'services':services})
 
 @staff_member_required
 def create(request):
