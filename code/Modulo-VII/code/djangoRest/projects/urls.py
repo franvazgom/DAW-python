@@ -9,7 +9,7 @@ router.register('api/projects', ProjectViewSet, 'projects')
 # urlpatterns = router.urls
 
 urlpatterns = [
-    path('api/projects/', include(router.urls)),
+    path('', include(router.urls)),
     path('dataTest/', DataTest.as_view()),
 ]
 
