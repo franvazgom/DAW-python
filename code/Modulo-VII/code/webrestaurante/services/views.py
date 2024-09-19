@@ -4,6 +4,9 @@ from django.views.generic.edit import CreateView
 from django.views.generic import TemplateView, ListView
 from .forms import ServiceForm, OrderForm
 from django.contrib.admin.views.decorators import staff_member_required
+from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import permission_required
+from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
 
 class ServiceListView(ListView):
@@ -17,6 +20,8 @@ class ServiceListView(ListView):
 class OrderSuccess(TemplateView):
     template_name = 'services/order_success.html'
 
+@method_decorator(login_required(login_url='/accounts/login/'), name='dispatch')
+@method_decorator(permission_required('services.can_edit_order', login_url='/accounts/login/'), name='dispatch')
 class ServiceCreateOrder(CreateView):
     form_class = OrderForm
     template_name = 'services/order_client.html'
@@ -36,6 +41,7 @@ def _create_dict(data_order):
         res[detail[0]] = int(detail[1])
     return res
 
+@permission_required('services.can_edit_order', login_url='/accounts/login/')
 def order_request(request):
     order = list()
     if request.method == 'POST':

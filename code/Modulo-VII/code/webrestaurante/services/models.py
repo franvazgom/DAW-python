@@ -12,6 +12,9 @@ class Order(models.Model):
         verbose_name = 'Pedido'
         verbose_name_plural = 'Pedidos'
         ordering = ['-fecha']
+        permissions = [
+            ('can_edit_order', 'can edit order'),
+        ]
 
     def __str__(self):
         return str(self.id)
